@@ -1,0 +1,11 @@
+Search and import date distinction
+==================================
+The Covidence import history verifies the reference import dates shown in Covidence_Import_History.csv:
+Scopus: 6 Nov 2026
+Web of Science and Engineering Village: 11 Nov 2026
+Google Scholar, ScienceDirect, Springer Nature and IEEE Xplore: 12 Nov 2026
+
+These are Covidence import dates, not necessarily the exact database query execution dates.
+The reviewer's notes document a 2000–2026 publication-year limit across all seven sources.
+Exact execution dates by database should only be added if supported by the original search histories,
+export timestamps, or saved database query records.
