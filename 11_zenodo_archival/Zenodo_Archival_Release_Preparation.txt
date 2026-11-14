@@ -3,21 +3,22 @@ ZENODO ARCHIVAL RELEASE — PREPARATION NOTE
 Repository: https://github.com/Clintonblakk-tech/reinforcement-learning-wdn-sensor-placement-slr
 Review title: Reinforcement Learning for Optimal Sensor Placement in Water Distribution Networks: A Systematic Literature Review
 
-The repository is being prepared for Zenodo GitHub integration. The repository is public. The Zenodo metadata draft is stored in .zenodo.json.
+CURRENT REPOSITORY STATUS
+- The public repository contains research-methods and supporting research records.
+- The journal-submission manuscript and working drafts are not intended for this repository.
+- The previously visible EMS_SLR_Zenodo_Deposit_v1.3_NO_MANUSCRIPT.zip archive has been deleted from the main branch.
+- The folder 08_manuscript_and_reporting contains Author_Declarations_To_Confirm.md and Zenodo_Metadata_Draft.json; it does not contain the EMS manuscript.
+- The folder 11_zenodo_archival contains this preparation note only.
+- The root LICENSE and .zenodo.json currently specify MIT. Publication under this licence should proceed only after all relevant rights holders/co-authors have approved the licence and public release of the materials.
 
-IMPORTANT:
-- Do not create a GitHub release until the public repository contents, rights, and metadata have been checked.
-- The EMS journal-submission manuscript and working drafts must remain outside the repository and archival release.
-- Publisher PDFs and full extracted article texts are excluded.
-- No licence has been selected; authors must confirm rights and permissions before choosing one.
-- The complete decision-level export for all 377 title/abstract screening records was not recovered. This limitation must remain explicit.
+RELEASE CHECKS
+- Confirm that all retained records may be publicly shared and that any third-party material is used only as permitted.
+- Confirm co-author approval for the repository contents and MIT licensing.
+- Review the README and .zenodo.json metadata before creating a GitHub release.
+- Do not include the EMS journal-submission manuscript, working drafts, journal supplementary submission files, publisher PDFs, or extracted full-text articles in the release.
+- The complete decision-level export for all 377 title/abstract screening records was not recovered; this limitation must remain explicit.
 - One reviewer conducted screening and extraction.
-- The 37 full-text exclusion records, evidence-gap reconciliation, and extraction workflow status discrepancy are documented.
+- The repository documents 37 full-text exclusions, the evidence-gap reconciliation, and the extraction workflow status discrepancy.
 
-Prepared local archival file:
-EMS_SLR_Zenodo_Deposit_v1.2_NO_MANUSCRIPT.zip
-
-The local archive excludes the manuscript, excludes publisher PDFs, includes current extraction/screening workbooks and supporting records, and has a regenerated SHA256SUMS.csv file. It must be inspected by the authors before deposit.
-
-DOI STATUS:
-No DOI has been minted. Zenodo issues a DOI after the repository is enabled and a new GitHub release is created and processed.
+DOI STATUS
+No DOI has been minted. If the repository is enabled in Zenodo, Zenodo can archive a new GitHub release and assign a DOI after the release is processed. Verify the Zenodo integration and resulting record before citing a DOI.
