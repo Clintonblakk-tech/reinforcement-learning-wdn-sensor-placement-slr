@@ -1,0 +1,3 @@
+Covidence_ID,Study,Field,Original_export_status,Source_level_verification,Reconciled_treatment
+286,"Ettyem et al. (2026)","Network or benchmark name","Blank","Same extraction record identifies Thi-Qar urban water distribution network, Iraq, under Dataset or benchmark source.","Keep original field blank; record Thi-Qar urban WDN, Iraq only as a derived/reconciled value."
+7,"Sukya et al. (2026a), Bayesian optimisation","Possible conflicts of interest for study authors","Blank","Supplied article PDF/text acknowledges Department of Informatics, Institut Teknologi Sepuluh Nopember (ITS), 2026 Batch 1 Research Grant; no COI declaration located.","Record Not reported in article; do not infer None declared. Keep original extraction field blank."
