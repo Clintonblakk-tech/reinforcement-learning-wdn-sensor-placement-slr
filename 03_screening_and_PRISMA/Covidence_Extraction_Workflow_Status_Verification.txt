@@ -1,0 +1,21 @@
+COVidence EXTRACTION WORKFLOW STATUS VERIFICATION
+
+Review: Reinforcement Learning for Optimal Sensor Placement in Water Distribution Networks
+Evidence basis: User-provided Covidence screenshots dated 14 November 2026.
+
+The screenshots show an individual extraction-completed indicator for all four included studies:
+- #286 Ettyem et al. (2026): "You completed extraction".
+- #18 Song et al. (2022): "You completed extraction".
+- #8 Sukya et al. (2026), SPARC: "You completed extraction".
+- #7 Sukya et al. (2026), Bayesian optimisation: "You completed extraction"; "You completed comparison" is also visible.
+
+The aggregate Covidence dashboard simultaneously reports:
+Total included = 4; Not started = 0; In progress = 3; Consensus required = 0; Complete = 1.
+
+Interpretation:
+All four individual study records are visibly marked as extraction completed. The aggregate dashboard classification is separate and remains 3 In progress / 1 Complete in the screenshots. The screenshots do not establish why the aggregate classification differs.
+
+Reporting instruction:
+Do not describe three studies as having missing extraction records. Do not claim that Covidence's aggregate dashboard showed 4 Complete. Do not alter completed extraction answers solely to change the aggregate dashboard classification.
+
+This verification is based on screenshots, not a live inspection of the Covidence account.
