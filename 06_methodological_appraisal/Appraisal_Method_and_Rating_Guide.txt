@@ -1,0 +1,25 @@
+Adapted ten-criterion descriptive appraisal used in the review.
+
+Criteria:
+1. Research objective
+2. Network characterisation
+3. RL methodology
+4. Sensor-placement formulation
+5. Experimental configuration
+6. Performance evaluation
+7. Comparative evaluation
+8. Statistical validation
+9. Reproducibility
+10. Reporting of limitations
+
+Ratings:
+Yes = adequately addressed.
+Partially = addressed, but important information was missing.
+No = not adequately addressed.
+Unclear = insufficient information for a reliable judgement.
+
+The framework was used descriptively. It is not presented as a validated standardised instrument.
+No overall numerical quality score was used to rank or retrospectively exclude studies.
+
+The current manuscript reports 19 Yes, 18 Partially and 3 No judgements across 40 criterion-level assessments.
+These counts are descriptive and should not be interpreted as a validated overall quality score.
