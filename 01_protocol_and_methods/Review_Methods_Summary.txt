@@ -3,10 +3,60 @@ Review title
 Reinforcement Learning for Optimal Sensor Placement in Water Distribution Networks:
 A Systematic Literature Review
 
-Review scope
-============
-Identify and synthesise original studies applying reinforcement learning or qualifying RL-based
-hybrid approaches directly to sensor-location optimisation in water distribution networks.
+Review configuration and protocol
+=================================
+Covidence review settings identify the review type as "Systematic review", the question type as
+"Other" (specified as "Intervention"), and the research area as "Engineering, maths, physics and
+technology". The stated review purpose in Covidence is a Master's degree thesis/dissertation.
+
+The protocol and eligibility criteria were established within Covidence using the PICOS
+(Population, Intervention, Comparison, Outcome, Study Design) framework. The protocol was not
+separately registered in an external public prospective review registry.
+
+PICOS population
+================
+Water distribution networks, including municipal, urban and benchmark water-supply networks,
+where sensor placement is investigated for leak detection, contamination detection, water-quality
+monitoring or related network-monitoring objectives.
+
+PICOS intervention
+==================
+Reinforcement-learning algorithms, including Q-learning, DQN, Double DQN, DDPG, PPO, A3C and
+other RL approaches, applied to sensor placement, deployment or sensor-location optimisation
+in water distribution networks.
+
+PICOS comparison
+================
+Traditional optimisation and heuristic approaches, including genetic algorithms, particle swarm
+optimisation, simulated annealing and other relevant methods. Studies without an explicit
+comparator could also be included when they investigated RL-based sensor placement in WDNs
+and provided sufficient evidence of method performance.
+
+PICOS outcomes
+==============
+Sensor-placement performance and optimisation outcomes, including leak-detection accuracy,
+contamination-detection performance, sensor coverage, detection time, sensor-installation cost,
+redundancy reduction, computational efficiency, network-monitoring effectiveness and solution
+quality.
+
+PICOS study design
+==================
+Original peer-reviewed journal articles and conference papers published between 2000 and 2026
+in English, investigating RL-based sensor placement, deployment or sensor-location optimisation
+in water distribution networks.
+
+Eligibility exclusions
+======================
+Excluded populations: studies focused exclusively on non-water networks without direct relevance
+to water distribution networks.
+Excluded interventions: studies not applying RL to sensor placement or sensor-location
+optimisation in WDNs.
+Excluded comparisons: comparisons unrelated to sensor placement or not providing evidence
+relevant to the review objectives.
+Excluded outcomes: studies reporting unrelated outcomes (for example, pump scheduling or energy
+optimisation alone) without evaluating sensor-placement performance.
+Excluded study designs: editorials, commentaries, book reviews, review articles, non-peer-reviewed
+publications and publications lacking sufficient methodological or technical information.
 
 Information sources
 ===================
@@ -15,7 +65,7 @@ and IEEE Xplore.
 
 Publication-year range
 ======================
-2000–2026 across all seven sources (reviewer confirmation).
+2000–2026 across all seven sources (reviewer confirmation and Covidence eligibility criteria).
 
 Selection process
 =================
@@ -24,8 +74,18 @@ Selection process
 
 Screening and extraction
 ========================
-One reviewer conducted screening and data extraction in Covidence. The Covidence extraction form
-was titled "Extraction 2 – Mapping and describing the evidence".
+Covidence was used to manage eligibility criteria, screening, full-text assessment and data
+extraction. Covidence settings specify one reviewer for title/abstract screening, one for full-text
+review and one for data extraction. Extraction 2 ("Mapping and describing the evidence") was
+selected. The four included study records are individually marked as extraction completed in
+Covidence. The aggregate Covidence dashboard displayed 3 In progress and 1 Complete; the reason
+for this aggregate classification is not established by the available screenshots.
+
+Search-date note
+================
+Covidence review settings show 12 November 2026 as the date of last search. Covidence import
+history separately records source imports between 6 and 12 November 2026. Import dates are not
+necessarily the exact database query execution dates.
 
 Synthesis
 =========
