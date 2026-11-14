@@ -1,0 +1,30 @@
+{
+  "title": "Reinforcement Learning for Optimal Sensor Placement in Water Distribution Networks: Systematic Literature Review — Supporting Evidence and Reproducibility Materials",
+  "upload_type": "dataset",
+  "description": "Supporting research materials for a systematic literature review of reinforcement learning approaches to sensor placement in water distribution networks. The deposit includes review methods and PICOS eligibility criteria, database-specific search strategies, Covidence import provenance, PRISMA flow counts, the included-study register, recovered full-text exclusion records, data-extraction records, evidence-gap reconciliation, descriptive methodological appraisal, and supplementary figures. The complete decision-level export for all 377 title/abstract records was not recovered and this limitation is documented. Screening and extraction were conducted by one reviewer. The journal-submission manuscript and publisher-formatted full-text articles are intentionally excluded.",
+  "creators": [
+    {
+      "name": "Blakk, Clinton Jengoa",
+      "affiliation": "Department of Electrical and Electronic Engineering Science, University of Johannesburg, Johannesburg, South Africa"
+    },
+    {
+      "name": "Nwulu, Nnamdi",
+      "affiliation": "Department of Electrical and Electronic Engineering Science, University of Johannesburg, Johannesburg, South Africa"
+    },
+    {
+      "name": "Akinlabi, Esther Titilayo",
+      "affiliation": "Department of Mechanical Engineering, Walter Scott, Jr. College of Engineering, Colorado State University, Fort Collins, USA"
+    }
+  ],
+  "keywords": [
+    "systematic literature review",
+    "reinforcement learning",
+    "sensor placement",
+    "water distribution networks",
+    "water quality monitoring",
+    "leak detection",
+    "Covidence",
+    "PRISMA 2020"
+  ],
+  "notes": "No licence is specified in this metadata file because author rights and reuse permissions must be confirmed before selecting a licence."
+}
