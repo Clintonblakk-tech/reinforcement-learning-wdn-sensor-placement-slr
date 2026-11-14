@@ -1,7 +1,22 @@
 SCREENING AND EXTRACTION PROVENANCE
 
-Covidence was used to manage reference screening and data extraction. The review was conducted by one reviewer.
+Covidence was used to configure the review eligibility criteria and manage reference screening,
+full-text assessment and data extraction. The review settings specify one reviewer for title/abstract
+screening, one for full-text assessment and one for data extraction.
 
-The Covidence import history and reconciled PRISMA counts are provided in this folder. Original title/abstract decisions, report-level full-text decisions, and completed extraction forms have not yet been exported into this repository. Their absence is recorded in 10_pending_author_exports/README_PENDING_EXPORTS.txt.
+The PICOS eligibility framework is documented in:
+01_protocol_and_methods/Covidence_PICOS_Protocol_and_Eligibility.md
 
-Do not treat the manuscript-derived synthesis in 05_data_extraction as a substitute for the original Covidence extraction records.
+The four included study records are individually marked as extraction completed in the user-provided
+Covidence screenshots. One record (#7, Sukya et al., Bayesian optimisation) also shows comparison
+completed. The aggregate dashboard simultaneously displayed 3 In progress and 1 Complete. The
+available screenshots do not explain this discrepancy; it must not be interpreted as three missing
+extraction records.
+
+The Covidence import history and reconciled PRISMA counts are provided in this folder. The complete
+377-record title/abstract decision-level export has not been recovered. The 37 full-text exclusion
+records and four-study extraction export have been recovered locally but are not yet included in this
+GitHub repository.
+
+Do not treat the manuscript-derived synthesis in 05_data_extraction as a substitute for the original
+Covidence extraction export.
