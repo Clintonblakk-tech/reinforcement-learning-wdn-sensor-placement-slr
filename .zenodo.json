@@ -26,5 +26,6 @@
     "Covidence",
     "PRISMA 2020"
   ],
-  "notes": "No licence is specified in this metadata file because author rights and reuse permissions must be confirmed before selecting a licence."
+  "notes": "MIT License applies only to original materials in this repository for which the listed authors hold the necessary rights. Third-party copyrighted content, publisher materials, and materials subject to separate terms are excluded; users must follow the original rights and terms for those materials.",
+  "license": "MIT"
 }
