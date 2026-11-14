@@ -1,0 +1,11 @@
+Criterion,Ettyem_et_al_2027,Song_et_al_2022,Sukya_et_al_2026b_SPARC,Sukya_et_al_2026a_BO
+Research objective,Yes,Yes,Yes,Yes
+Network characterisation,Partially,Partially,Yes,Yes
+RL methodology,Partially,Yes,Yes,Yes
+Sensor-placement formulation,Partially,Yes,Yes,Yes
+Experimental configuration,Partially,Partially,Partially,Partially
+Performance evaluation,Yes,Yes,Yes,Yes
+Comparative evaluation,Partially,Yes,Partially,Partially
+Statistical validation,No,No,Partially,No
+Reproducibility,Partially,Partially,Partially,Partially
+Reporting of limitations,Yes,Partially,Yes,Partially
