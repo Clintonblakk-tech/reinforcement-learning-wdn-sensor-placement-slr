@@ -50,4 +50,4 @@ Publisher-formatted full-text PDFs and full extracted article texts are excluded
 The GitHub repository is the public working source. Zenodo integration and the first archival release are pending. A DOI must not be cited until Zenodo has processed and published the release. Each subsequent GitHub release will receive its own version DOI; Zenodo also provides a concept DOI for the record across versions.
 
 ## Licensing
-No public licence has been assigned. Confirm author ownership and permissions for all materials before selecting a licence.
+The repository's original materials, to the extent the listed authors hold the necessary rights, are licensed under the MIT License (see the root `LICENSE` file). Third-party copyrighted content, publisher materials, and materials governed by separate terms are excluded from this licence. Users must respect the original rights and terms applicable to those materials.
