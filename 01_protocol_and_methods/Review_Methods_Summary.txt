@@ -1,0 +1,39 @@
+Review title
+============
+Reinforcement Learning for Optimal Sensor Placement in Water Distribution Networks:
+A Systematic Literature Review
+
+Review scope
+============
+Identify and synthesise original studies applying reinforcement learning or qualifying RL-based
+hybrid approaches directly to sensor-location optimisation in water distribution networks.
+
+Information sources
+===================
+Web of Science, Scopus, Google Scholar, ScienceDirect, Engineering Village, Springer Nature,
+and IEEE Xplore.
+
+Publication-year range
+======================
+2000–2026 across all seven sources (reviewer confirmation).
+
+Selection process
+=================
+417 records imported; 40 duplicates identified; 377 title/abstract records screened; 336 excluded;
+41 full texts assessed; 37 full-text exclusions; 4 studies included.
+
+Screening and extraction
+========================
+One reviewer conducted screening and data extraction in Covidence. The Covidence extraction form
+was titled "Extraction 2 – Mapping and describing the evidence".
+
+Synthesis
+=========
+Narrative and comparative synthesis. No pooled effect estimate was calculated because the included
+studies differed in algorithms, network representations, placement formulations, objectives and
+evaluation measures.
+
+Quality appraisal
+=================
+An adapted ten-criterion descriptive appraisal; not a validated standardised risk-of-bias instrument.
+No overall quality score was used to rank or exclude studies.
