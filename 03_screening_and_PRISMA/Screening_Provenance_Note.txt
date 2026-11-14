@@ -1,0 +1,7 @@
+SCREENING AND EXTRACTION PROVENANCE
+
+Covidence was used to manage reference screening and data extraction. The review was conducted by one reviewer.
+
+The Covidence import history and reconciled PRISMA counts are provided in this folder. Original title/abstract decisions, report-level full-text decisions, and completed extraction forms have not yet been exported into this repository. Their absence is recorded in 10_pending_author_exports/README_PENDING_EXPORTS.txt.
+
+Do not treat the manuscript-derived synthesis in 05_data_extraction as a substitute for the original Covidence extraction records.
