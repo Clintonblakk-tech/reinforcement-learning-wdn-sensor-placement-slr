@@ -1,0 +1,12 @@
+{
+  "title": "Reinforcement Learning for Optimal Sensor Placement in Water Distribution Networks: A Systematic Literature Review — Reproducibility Package",
+  "upload_type": "dataset",
+  "description": "Working reproducibility package for a systematic literature review. The review searched seven information sources and reports 417 imported records, 40 duplicates removed, 377 title/abstract records screened, 41 full texts assessed, and four included studies. Package includes methods, search strategies, Covidence import history, PRISMA counts, included-study register, manuscript-derived synthesis, appraisal materials and manuscript/figures. Original Covidence screening and extraction exports remain outstanding. Publisher full-text PDFs and full extracted article texts are excluded because redistribution rights have not been established.",
+  "creators": [{"name": "AUTHOR NAME REQUIRED", "affiliation": "AFFILIATION REQUIRED"}],
+  "keywords": ["systematic literature review","reinforcement learning","sensor placement","water distribution networks","contamination detection","PRISMA","reproducibility"],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "version": "1.0.0-working",
+  "related_identifiers": [{"identifier":"https://github.com/Clintonblakk-tech/reinforcement-learning-wdn-sensor-placement-slr","relation":"isSupplementTo","scheme":"url"}],
+  "notes": "DRAFT ONLY. Confirm author names, affiliations, licence, funding and repository completeness. Do not publish until placeholders are resolved. No DOI has been minted."
+}
