@@ -1,0 +1,5 @@
+PUBLIC REPOSITORY CONTENT NOTE
+
+This repository contains the working documentation and materials for the systematic literature review. Publisher-formatted full-text articles and full extracted article texts have been excluded from this public release because redistribution rights have not been established. Consult the included study register for bibliographic details and DOI information, and obtain articles through the publishers or institutional access.
+
+The repository is a working reproducibility package, not yet a complete archival release. See 10_pending_author_exports/README_PENDING_EXPORTS.txt for original Covidence exports and other items still required.
