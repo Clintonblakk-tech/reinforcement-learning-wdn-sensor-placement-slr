@@ -1,0 +1,23 @@
+ZENODO ARCHIVAL RELEASE — PREPARATION NOTE
+
+Repository: https://github.com/Clintonblakk-tech/reinforcement-learning-wdn-sensor-placement-slr
+Review title: Reinforcement Learning for Optimal Sensor Placement in Water Distribution Networks: A Systematic Literature Review
+
+The repository is being prepared for Zenodo GitHub integration. The repository is public. The Zenodo metadata draft is stored in .zenodo.json.
+
+IMPORTANT:
+- Do not create a GitHub release until the public repository contents, rights, and metadata have been checked.
+- The EMS journal-submission manuscript and working drafts must remain outside the repository and archival release.
+- Publisher PDFs and full extracted article texts are excluded.
+- No licence has been selected; authors must confirm rights and permissions before choosing one.
+- The complete decision-level export for all 377 title/abstract screening records was not recovered. This limitation must remain explicit.
+- One reviewer conducted screening and extraction.
+- The 37 full-text exclusion records, evidence-gap reconciliation, and extraction workflow status discrepancy are documented.
+
+Prepared local archival file:
+EMS_SLR_Zenodo_Deposit_v1.2_NO_MANUSCRIPT.zip
+
+The local archive excludes the manuscript, excludes publisher PDFs, includes current extraction/screening workbooks and supporting records, and has a regenerated SHA256SUMS.csv file. It must be inspected by the authors before deposit.
+
+DOI STATUS:
+No DOI has been minted. Zenodo issues a DOI after the repository is enabled and a new GitHub release is created and processed.
