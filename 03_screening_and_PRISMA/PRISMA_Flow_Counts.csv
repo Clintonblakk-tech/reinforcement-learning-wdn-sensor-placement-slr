@@ -1,0 +1,12 @@
+PRISMA_stage,Count
+Records identified from databases,417
+Duplicate records removed,40
+Records screened (title and abstract),377
+Records excluded at title/abstract,336
+Reports sought for retrieval,41
+Reports assessed for eligibility,41
+Reports excluded: wrong intervention,27
+Reports excluded: wrong study type,6
+Reports excluded: wrong population,4
+Total full-text exclusions,37
+Studies included in qualitative synthesis,4
