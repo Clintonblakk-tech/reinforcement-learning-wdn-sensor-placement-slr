@@ -1,0 +1,38 @@
+covidence_id,study_label,title,authors,year,doi,excluded_date,reason
+266,,Ai For Water Resource Management,[Unknown authors],2026,10.1007/978-3-032-20606-0_29,13/11/26,Wrong intervention
+300,Acharya 2022,Multi-Dimensional Resilience of Water Distribution System for Water Quality Sensor Placement,"Acharya, A",2022,,13/11/26,Wrong intervention
+15,Acharya 2026,Sensor Placement for Contamination Detection in Urban Water Distribution System Based on Multidimensional Resilience,"Acharya, Albira; Ghimire, Amrit Babu; Magar, Binod Ale; Shin, Sangmin",2026,10.3390/systems14040422,13/11/26,Wrong intervention
+330,Artelt 2026,First AI for Drinking Water Chlorination Challenge,"Artelt, A; Hermes, L; Strotherm, J; Hammer, B; ...",2026,10.1061/JWRMD5.WRENG-7562,13/11/26,Wrong intervention
+328,Artelt 2024,A toolbox for supporting research on ai in water distribution networks,"Artelt, A; Kyriakou, MS; Vrachimis, SG; ...",2024,,13/11/26,Wrong intervention
+398,Basu 2022,Identifying Sources of Anomalies in Complex Networks,"Basu, K",2022,,13/11/26,Wrong population
+404,Bekdaş 2018,Optimization in civil engineering and metaheuristic algorithms: a review of state-of-the-art developments,"Bekdaş, G; Nigdeli, SM; Kayabekir, AE; ...",2018,10.1007/978-3-319-96433-1_6,13/11/26,Wrong study type
+338,Bertoldi 2012,Modeling studies for the detection ofbacteria in Biosensor Water Distribution Networks,"Bertoldi, A",2012,,13/11/26,Wrong intervention
+298,Coma 2018,Robust leak localization in water distribution networks using machine learning techniques,"Coma, A Soldevila",2018,,13/11/26,Wrong intervention
+366,Dalal 2023,Implementation of “Intelligent Water Leakage Detection Technique for Future Smart Cities”,"Dalal, DH",2023,,13/11/26,Wrong intervention
+303,Duan 2025,Energy-efficient management of urban water distribution networks under hydraulic anomalies: A review of technologies and challenges,"Duan, B; Gao, J; Cao, H; Hu, S",2025,,13/11/26,Wrong study type
+368,Fan 2024,Artificial intelligence aided resilient and sustainable water infrastructure systems,"Fan, X",2024,,13/11/26,Wrong intervention
+397,Faulkner 2014,Selective Data Gathering in Community Sensor Networks,"Faulkner, MN",2014,,13/11/26,Wrong intervention
+367,Ferreira 2026,Practical framework for automatic pipe burst detection and location: application to a real case study,"Ferreira, B; Caetano, J; Almeida, S; Carriço, N; ...",2026,10.1080/1573062X.2026.2714264,13/11/26,Wrong intervention
+371,Golovin 2010,Online distributed sensor selection,"Golovin, D; Faulkner, M; Krause, A",2010,10.1145/1791212.1791239,13/11/26,Wrong intervention
+381,Gowda 2024,Data-driven aquatics: the future of water management with IoT and machine learning,"Gowda, VD; Sharma, A; Tanguturi, RC; ...",2024,,13/11/26,Wrong intervention
+359,Grbčić 2021,Numerical modeling of fluid mixing in pipe networks with machine learning applications: doctoral dissertation,"Grbčić, L",2021,,13/11/26,Wrong intervention
+345,Guestrin 2009,Optimizing Sensing: From Water to the Web,"Guestrin, AKC",2009,,13/11/26,Wrong intervention
+384,Han 2019,Enabling resilience in cyber-physical-human water infrastructures,"Han, Q",2019,,13/11/26,Wrong intervention
+365,Haq 2025,Enhancing water security through automation: Case studies and technical advancements in water quality management,"Haq, IU; Shah, HA; Rufai, SZ",2025,,13/11/26,Wrong intervention
+400,Ji 2023,Route planning of mobile sensing fleets for repeatable visits,"Ji, W; Han, K; Ge, Q",2023,,13/11/26,Wrong population
+310,Joseph 2026,Development of Software and Hardware-Based Methods for the Detection of Leaks and Bursts in the Water Supply Systems for Developing an Intelligent Water …,"Joseph, K",2026,,13/11/26,Wrong intervention
+376,Laszka 2020,"Integrating redundancy, diversity, and hardening to improve security of industrial internet of things","Laszka, A; Abbas, W; Vorobeychik, Y; ...",2020,10.1080/23335777.2019.1624620,13/11/26,Wrong intervention
+229,Madi 2024,12.10 - Review of recent developments of sensor materials and applications,"Madi, Haneya J; Mansour, Shoruk A; Hammad, Mabrouka A",2024,10.1016/B978-0-323-96020-5.00027-3,13/11/26,Wrong study type
+289,Medio 2026,Mitigation of Hydrogeological Risk Caused by Leakage in Urban Water Distribution Networks: Sensor Placement Optimization Methods,"Medio, G",2026,,13/11/26,Wrong intervention
+299,Moradi 2026,Risk-driven sensor placement in sewer networks: A descriptive–predictive–prescriptive framework,"Moradi, M; Najafi, M",2026,,13/11/26,Wrong intervention
+327,Sankari 2025,Water Distribution Network for Irrigation using Artificial Neural Network (ANN) Algorithm,"Sankari, M; Viveha, R; Varshita, Y",2025,,13/11/26,Wrong intervention
+351,Shirisha 2026,IoT-to-Edge Digital Twin Framework for Water Pipeline Leak Localization Using Pressure-Flow Sensors,"Shirisha, N; Srinivas, D; Naveen, G; ...",2026,,13/11/26,Wrong intervention
+386,,,"Suvizi, A; Ahmadi, R; Zamani, MS; Meybodi, MR",2026,,13/11/26,Wrong intervention
+319,Tyagi 2026,Sensor-Based Optimization of Water Distribution Systems Using IoT and Reinforcement Learning Model,"Tyagi, R; Singh, R; Patira, R; Joshi, P; ...",2026,,13/11/26,Wrong intervention
+396,Venkateswaran 2021,Leveraging Community Structure and Behavior for Smart Infrastructure,"Venkateswaran, P",2021,,13/11/26,Wrong population
+375,Wilder 2018,Risk-sensitive submodular optimization,"Wilder, B",2018,,13/11/26,Wrong intervention
+348,Wu 2022,Smart water grid technology based on deep learning: a review,"Wu, H; Peng, L; Jiang, F; Cheng, S; ...",2022,10.1504/IJWMC.2022.124825,13/11/26,Wrong study type
+285,Yao 2026,Optimal Sensor and Sampling Placement for Contaminant Detection: A Comprehensive Review Across Water Distribution and Wastewater Collection Systems,"Yao, Y; Wallner, M; Klawonn, F",2026,,13/11/26,Wrong study type
+324,Yin 2026,Advancements in Predictive Intelligence for Smart Infrastructure Systems,"Yin, R",2026,,13/11/26,Wrong population
+342,Zhao 2026,Integrated Diagnostic Model for Leakage and Blockage in Water Distribution Networks based on Multisensor Data Fusion,"Zhao, J; Wang, Y; Zhang, L",2026,,13/11/26,Wrong intervention
+393,Баженов 2024,Роль искусственного интеллекта в предотвращении утечек воды из сетей водоснабжения,,2024,,13/11/26,Wrong study type
