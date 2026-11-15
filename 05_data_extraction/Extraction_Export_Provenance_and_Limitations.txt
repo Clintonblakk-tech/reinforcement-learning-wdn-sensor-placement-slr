@@ -1,15 +1,21 @@
-SLR COVidence EXTRACTION REGISTER — SOURCE EXPORT PRESERVED
+SLR COVIDENCE EXTRACTION REGISTER — SOURCE EXPORT PRESERVED
 
 Source:
 User-uploaded Covidence CSV generated 15 November 2026 using:
 - Data: Data extraction consensus + individual data
 - Format: Single sheet (CSV)
+- Original source filename: review_843067_20261115084219.csv
+
+Repository files:
+- Original_Covidence_Extraction_Export_2026-11-15.csv — the uploaded source CSV.
+- Covidence_Extraction_Register_Individual_and_Consensus_Records.xlsx — the organised workbook, including the Original_Export sheet.
+- Evidence_Gap_Reconciliation.csv — the separate field-level reconciliation record.
 
 What the source contains:
-- 5 rows and 59 columns.
-- Four individual reviewer extraction rows (Reviewer Name: Clinton BLAKK), covering four unique included studies.
-- One additional consensus row for Covidence study #7 (Sukya 2026).
-- The four individual rows contain populated extraction content across nearly all fields.
+- 5 data records and 59 columns (plus the CSV header row).
+- Four individual reviewer extraction records (Reviewer Name: Clinton BLAKK), covering four unique included studies.
+- One additional consensus record for Covidence study #7 (Sukya 2026).
+- The four individual records contain populated extraction content across nearly all fields.
 
 Quality check:
 - Ettyem (#286): one blank field — Network or benchmark name.
@@ -19,11 +25,10 @@ Quality check:
 - Consensus row for #7 is retained separately and unchanged.
 
 Interpretation and limitation:
-This export is strong evidence that individual extraction data exist for all four included studies, despite the Covidence dashboard previously displaying one Done and three Started. The export alone does not establish why the dashboard workflow status differs; that should be checked in Covidence before claiming the workflow is fully completed.
-No extraction content has been invented or silently edited. The original full CSV is preserved in the workbook's Original_Export sheet.
-
+The export contains individual extraction data for all four included studies. Covidence screenshots of the individual study pages showed all four records marked “You completed extraction”. The aggregate dashboard separately displayed 3 In progress and 1 Complete. The export and screenshots do not establish why the aggregate dashboard status differs; the discrepancy is documented in Covidence_Extraction_Workflow_Status_Verification.txt. Do not interpret the aggregate status as evidence that three individual extraction records are missing.
+No extraction content has been invented or silently edited. The uploaded source CSV is preserved separately in this repository and its contents are also represented in the workbook’s Original_Export sheet.
 
 Evidence-gap reconciliation (15 November 2026)
 - Ettyem #286: the original “Network or benchmark name” field is blank. “Thi-Qar urban water distribution network, Iraq” is supported elsewhere in the same extraction record under “Dataset or benchmark source”; it is recorded only as a reconciled/derived value, not silently backfilled into the verbatim source field.
 - Sukya Bayesian-optimisation study #7: the original conflicts-of-interest field is blank. Inspection of the supplied article PDF/text found an Acknowledgment naming ITS 2026 Batch 1 Research Grant funding but no COI declaration. Therefore the appropriate reconciled status is “Not reported in article”, not “None declared”. The original Covidence field remains blank.
-- See the workbook sheet “Evidence_Gap_Reconciliation” and the standalone CSV for field-level provenance.
+- See the standalone file Evidence_Gap_Reconciliation.csv for field-level provenance and reconciliation. The organised workbook’s verified sheets include Export_Summary, Four_Included_Studies, Field_Completeness, Individual_Extractions, Consensus_Extraction, Original_Export, and Covidence_Workflow_Verification.
