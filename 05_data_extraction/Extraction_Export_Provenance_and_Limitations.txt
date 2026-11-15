@@ -1,0 +1,29 @@
+SLR COVidence EXTRACTION REGISTER — SOURCE EXPORT PRESERVED
+
+Source:
+User-uploaded Covidence CSV generated 15 November 2026 using:
+- Data: Data extraction consensus + individual data
+- Format: Single sheet (CSV)
+
+What the source contains:
+- 5 rows and 59 columns.
+- Four individual reviewer extraction rows (Reviewer Name: Clinton BLAKK), covering four unique included studies.
+- One additional consensus row for Covidence study #7 (Sukya 2026).
+- The four individual rows contain populated extraction content across nearly all fields.
+
+Quality check:
+- Ettyem (#286): one blank field — Network or benchmark name.
+- Song (#18): no blank extraction fields detected.
+- SPARC (#8): no blank extraction fields detected.
+- Sukya Bayesian Optimisation (#7): one blank field — Possible conflicts of interest for study authors.
+- Consensus row for #7 is retained separately and unchanged.
+
+Interpretation and limitation:
+This export is strong evidence that individual extraction data exist for all four included studies, despite the Covidence dashboard previously displaying one Done and three Started. The export alone does not establish why the dashboard workflow status differs; that should be checked in Covidence before claiming the workflow is fully completed.
+No extraction content has been invented or silently edited. The original full CSV is preserved in the workbook's Original_Export sheet.
+
+
+Evidence-gap reconciliation (15 November 2026)
+- Ettyem #286: the original “Network or benchmark name” field is blank. “Thi-Qar urban water distribution network, Iraq” is supported elsewhere in the same extraction record under “Dataset or benchmark source”; it is recorded only as a reconciled/derived value, not silently backfilled into the verbatim source field.
+- Sukya Bayesian-optimisation study #7: the original conflicts-of-interest field is blank. Inspection of the supplied article PDF/text found an Acknowledgment naming ITS 2026 Batch 1 Research Grant funding but no COI declaration. Therefore the appropriate reconciled status is “Not reported in article”, not “None declared”. The original Covidence field remains blank.
+- See the workbook sheet “Evidence_Gap_Reconciliation” and the standalone CSV for field-level provenance.

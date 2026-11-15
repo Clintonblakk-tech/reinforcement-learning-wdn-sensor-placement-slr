@@ -1,0 +1,1113 @@
+Covidence #,Study ID,Title,Reviewer Name,Author,Full study title,Journal or conference,Publication type,DOI,Year of publication,Study funding sources,Possible conflicts of interest for study authors,Study design classification,Network or benchmark name,Network type,Sensor type and sensing modality,Study location,Number of nodes/junctions,Number of pipes,Number of sensors considered,Number of reservoirs and tanks,Number of pumps and valves,Network size classification,Aim of study,Simulation and experimental environment,Notes,Main methodological contributions,Overall study findings,Research gaps and future directions,Study limitations,Reproducibility and data availability,RL algorithm,RL architecture,Sensor placement approach,State representation,Action space,Reward function,Optimisation objectives,Comparator algorithms,Hyperparameter optimisation,RL training strategy,Constraints on sensor placement,Detection coverage,Detection accuracy,Detection time,Sensor deployment cost,Number of sensors selected,Computational performance,Comparative performance ,Main quantitative results,Evaluation metrics and measurement criteria,Hydraulic simulation software,Programming language,RL framework or library,Dataset or benchmark source,Experimental scenarios,Number of independent runs or random seeds,Training episodes,Hardware and computational environment
+286,Ettyem 2026,Hybrid Reinforcement Learning (RL) and Social Network Community Detection Framework for Optimal Management and Redesign of Urban Water Network,Clinton BLAKK,Sajjad Ali Ettyem; Hasan Ziafat; Jafaar Fahad A. Rida; Sanaz Asadini,Hybrid Reinforcement Learning (RL) and Social Network Community Detection Framework for Optimal Management and Redesign of Urban Water Network.,Journal of Resource Management and Decision Engineering.,Journal article,10.61838/kman.jrmde.435,2026,The authors explicitly state that the study received no financial support.,None declared. The authors explicitly report no conflict of interest.,Simulation-based computational experiment,"","Real-world urban water distribution network (Thi-Qar, Iraq), evaluated through computational modelling and optimisation. The study uses a real-world network case study but reports computational rather than field-deployment evaluation.","Water-quality monitoring sensors for detecting contamination events in the water distribution network. The sensor-placement formulation considers candidate junction locations and evaluates contamination detection time, contaminated-water volume and detection likelihood.
+
+The paper separately reports 10 flow meters installed in the network. These flow meters should not be confused with the water-quality sensors being optimised.","Thi-Qar, Iraq, in the southwest of the country. The network is supplied by the Euphrates River and the Al-Gharraf stream.",Not reported. The article does not explicitly provide the total number of network junctions.,Not reported. The article does not explicitly provide the total number of pipes.,"The water-quality sensor-placement formulation uses a fixed sensor-budget parameter \(M\):
+\[
+\sum_{i=1}^{n}x_i=M
+\]
+However, the numerical value of \(M\) is not reported in the article.
+
+The authors separately report 10 installed flow meters (\(N_{fm}=10\)). These are flow-monitoring devices and should not be interpreted as the number of water-quality sensors selected by the optimisation.",Not reported.,Not reported as numerical counts. The paper discusses pump operations and valve/boundary interventions but does not provide complete counts of pumps and valves.,"Not reported. The authors describe the Thi-Qar network as an urban water distribution network but do not explicitly classify it as small, medium or large.","The study aims to develop and evaluate a hybrid reinforcement-learning and social-network community-detection framework integrating Proximal Policy Optimization (PPO), Social Network Search (SNS), edge-betweenness-based community partitioning and multi-objective optimisation. The framework is designed for the optimal sectorisation, monitoring and redesign of the Thi-Qar urban water distribution network while simultaneously improving water-quality detection, hydraulic performance and topological efficiency.
+
+The water-quality component specifically addresses minimising expected contamination detection time, minimising expected contaminated-water volume and maximising contamination detection likelihood.","The study evaluates the proposed framework using the Thi-Qar urban water distribution network in Iraq. The network is represented as a graph in which junctions correspond to nodes and pipes correspond to edges. The case-study network serves approximately 650,000 inhabitants and is supplied by the Euphrates River and the Al-Gharraf stream.
+
+The network is organised into seven District Metered Areas (DMAs), with four broader optimised zones identified in the reported analysis. The model uses a uniform design pressure of 20 m at each node and reports 10 installed flow meters. The analysis considers the main flow pipes.
+
+The water-quality sensor-placement subproblem is formulated as a multi-objective optimisation problem using three criteria: expected contamination detection time, expected contaminated-water volume and detection likelihood. Candidate sensor locations are represented by a binary decision vector over network junctions, subject to a fixed sensor-budget constraint.
+
+The framework integrates PPO-based reinforcement learning, NSGA-II, roulette-wheel selection, Social Network Search and edge-betweenness-based community detection. The PPO agent adaptively guides optimisation by tuning objective weights and refining candidate solutions. Hydraulic, topological and water-quality performance are subsequently evaluated.
+
+The article does not clearly identify the hydraulic simulation software, software version, programming language, deep-learning library or computational hardware used.","This study combines water-network sectorisation, community detection, hydraulic optimisation and water-quality sensor placement within a single framework.
+
+An important distinction is that the water-quality sensor-placement subproblem is formulated over candidate junctions, whereas the wider social-network and community-detection framework operates on network nodes and edges.
+
+The 10 flow meters reported by the authors are not equivalent to the water-quality sensor budget. The numerical water-quality sensor budget \(M\) is not specified.
+
+The study uses PPO as its reinforcement-learning component, NSGA-II for multi-objective sensor-configuration evolution, and Social Network Search for population-based search and community-related optimisation. These methods have distinct roles and should not be treated as interchangeable algorithms.","The study proposes a hybrid reinforcement-learning and social-network community-detection framework for water distribution network sectorisation, monitoring and redesign. Its methodology integrates Proximal Policy Optimization (PPO), Non-dominated Sorting Genetic Algorithm II (NSGA-II), Social Network Search (SNS), edge-betweenness-based community detection and multi-objective optimisation.
+
+For the water-quality monitoring component, sensor placement is formulated as a multi-objective optimisation problem using a binary decision vector representing sensor presence or absence at candidate network junctions. The framework considers three objectives: minimising expected contamination detection time, minimising expected contaminated-water volume and maximising contamination detection likelihood.
+
+The sensor-placement procedure uses demand-weighted roulette-wheel selection to generate an initial subdomain of candidate junctions. NSGA-II evolves candidate sensor configurations to produce a Pareto front, while non-dominated solutions are retained across successive generations. PPO provides an adaptive reinforcement-learning component that guides optimisation through reward-based policy updates and adjustment of objective weights.
+
+The wider framework combines SNS search behaviours—imitation, conversation, disputation and innovation—with edge-betweenness-based community detection to support network partitioning and sectorisation.","The authors report that the proposed RL-enhanced framework improves several hydraulic and topological performance indicators in the Thi-Qar network.
+
+The resilience deviation index decreases from 8.69 to 2.60, representing an approximately 70% reduction. The balance index improves from 1.27 to 1.01, while modularity increases from 0.72 to 0.79, an improvement of approximately 9.7%.
+
+Average path length decreases from 9.82 to 8.65, representing an approximately 11.9% reduction, while average path-length deviation decreases from 12.36 to 6.98, a reduction of approximately 43.5%. The standard deviation of nodal pressure decreases from 5.72 to 5.12, indicating improved pressure uniformity.
+
+For water-quality monitoring, the authors report that the proposed framework simultaneously addresses minimising expected detection time, minimising contaminated-water volume and maximising detection likelihood.
+
+The reported results demonstrate the potential of combining reinforcement learning, evolutionary optimisation and social-network methods for integrated water-network sectorisation and monitoring. However, the paper does not provide a clear numerical comparison of the sensor-placement component against standalone sensor-placement algorithms.","The authors identify the need to validate the proposed framework across water distribution networks with different sizes, layouts, source configurations and levels of hydraulic complexity, including megacity-scale systems and networks with intermittent supply.
+
+They recommend introducing uncertainty in water demand, pipe roughness, contamination occurrence, equipment availability and future network expansion. They also identify dynamic DMA management, more detailed water-quality processes and economic objectives as areas requiring further investigation.
+
+The authors further suggest comparing deterministic and stochastic optimisation formulations and evaluating alternative reinforcement-learning algorithms, evolutionary methods, graph neural networks and conventional multi-objective metaheuristics.
+
+They identify field implementation and digital-twin integration as important next steps for evaluating the framework under real operational constraints.
+
+From the perspective of this review, additional opportunities include reporting the numerical water-quality sensor budget, evaluating sensor deployment costs, providing reproducible sensor-placement configurations and isolating the contribution of PPO to the sensor-placement component. These are reviewer observations rather than explicit author-stated recommendations.","The authors acknowledge that the framework was evaluated on a single case-study network in Thi-Qar. Network-specific characteristics, including topology, demand distribution, source configuration and existing infrastructure, may influence algorithm performance and limit generalisability.
+
+Only selected hydraulic, topological and water-quality criteria are included. Other potentially important factors, such as lifecycle costs, pipe failure probabilities, valve reliability, energy tariffs, chlorine decay, stochastic contamination behaviour and emergency firefighting demand, are not explicitly modelled.
+
+The analysis is based on modelled network conditions rather than continuous real-time operation. Consequently, sensor failure, telemetry delays, uncertain demand, inaccurate hydraulic parameters and incomplete field data are not examined.
+
+The authors also acknowledge that computational requirements, hyperparameter sensitivity, convergence behaviour and robustness across alternative initialisations require more systematic investigation.","The study evaluates the Thi-Qar urban water distribution network and provides methodological descriptions of the PPO, NSGA-II, SNS and community-detection components. It also reports the mathematical formulation of the three water-quality sensor-placement objectives, the fixed sensor-budget constraint and several hydraulic and topological performance results.
+
+The authors state that data are available for research purposes upon reasonable request to the corresponding author. However, the article does not identify a public repository containing the complete source code, trained models, configuration files or processed experimental results.
+
+The programming language, hydraulic simulation software, software versions, hardware specifications and numerical water-quality sensor budget are not sufficiently documented in the article. These omissions limit independent reproduction of the complete framework.","Proximal Policy Optimization (PPO).
+
+PPO is the core reinforcement-learning algorithm used to guide the optimisation process. The agent interacts iteratively with the environment and updates its policy using reward feedback. The authors describe PPO as an adaptive decision-making mechanism that guides the optimisation by tuning objective weights and refining candidate solutions.","The framework uses an Actor-Critic architecture. The Actor represents the policy \(\pi(s_t)\), which defines the probability distribution over possible actions, while the Critic estimates the state-value function \(V(s_t)\).
+
+The PPO agent uses Generalized Advantage Estimation (GAE) to estimate the advantage of actions from temporal-difference information. Policy updates employ the PPO clipping mechanism to limit excessively large policy changes and support stable learning.
+
+The article also describes the integration of the RL agent within a behaviour-tree decision-making structure. However, the exact neural-network layer configuration, number of neurons, activation functions and software implementation are not reported.","The water-quality sensor-placement problem is formulated as a multi-objective optimisation problem over candidate network junctions.
+
+A binary decision vector represents the presence or absence of a sensor at each candidate junction:
+\[
+X=[x_1,x_2,\ldots,x_n]
+\]
+Demand-weighted roulette-wheel selection is used to generate an initial subdomain of candidate junctions. NSGA-II then evolves candidate sensor configurations to identify a Pareto-optimal front.
+
+Non-dominated configurations are retained in subsequent generations, while roulette-wheel selection fills the remaining candidate positions. This iterative process refines the solution space and evaluates candidate sensor configurations against contamination detection time, contaminated-water volume and detection likelihood.
+
+PPO adaptively guides the broader optimisation process by adjusting objective weights and refining candidate solutions. SNS and edge-betweenness-based community detection support the wider network-sectorisation framework.
+The article does not establish that PPO independently selects individual sensor locations. Instead, PPO guides the broader optimisation process, while roulette-wheel selection and NSGA-II perform the explicitly described candidate-generation and sensor-configuration search operations.","For the general PPO framework, the article defines the state as a combination of agent positional information, relevant task features and a representation of the environmental map.
+The article defines the PPO state as a combination of:
+- Agent positional information.
+- Relevant task features.
+- A representation of the environmental map.
+The MDP transition is represented by:
+\[
+(s_t,a_t,r_t,s_{t+1})
+\]
+The sensor-placement decision itself is represented by a binary vector:
+\[
+X=[x_1,x_2,\ldots,x_n]
+\]
+where \(x_i\) indicates whether a sensor is present at candidate junction \(i\).
+
+The article does not provide a complete, explicit numerical state vector for the water-quality sensor-placement subproblem. The general MDP state description and the sensor-placement decision vector should therefore be distinguished.","The PPO agent selects actions within the MDP framework to guide the optimisation process. The article describes the action as a decision intended to maximise the action-value function and improve the expected cumulative reward.
+
+For sensor placement, the candidate configuration is represented by the binary decision vector \(X\), in which each element indicates whether a sensor is placed at a candidate junction.
+
+However, the article does not explicitly provide a complete action-space definition specifying the exact PPO action corresponding to each individual sensor-placement decision. It is therefore safer not to claim that PPO directly selects each sensor location sequentially.","The article defines the PPO reward as a weighted function incorporating task importance, completion effectiveness and collaborative efficiency among agents.
+
+However, it does not provide a complete explicit mathematical reward equation specifically for the water-quality sensor-placement subproblem.
+
+The three sensor-placement objectives are separately defined as:
+1. Minimise expected contamination detection time.
+2. Minimise expected contaminated-water volume.
+3. Maximise contamination detection likelihood.
+These objective functions should not be presented as a fully specified PPO reward equation because the article does not explicitly establish that equivalence.","The water-quality sensor-placement problem has three principal objectives.
+1. Minimise expected contamination detection time:
+\[
+f_1=\min\left\{\frac{1}{N_s}
+\sum_{s=1}^{N_s}t_{d}^{s}(X)\right\}
+\]
+where \(N_s\) is the number of contamination events and \(t_d^s(X)\) is the detection time for event \(s\) using sensor configuration \(X\).
+2. Minimise expected contaminated-water volume:
+\[
+f_2=\min\left\{\frac{1}{N_s}
+\sum_{s=1}^{N_s}\sum_{i=1}^{N}
+\sum_{t=t_s^{in}}^{t_d^s}V_i^s(t)\right\}
+\]
+where \(V_i^s(t)\) represents the contaminated water volume at junction \(i\) during event \(s\).
+3. Maximise detection likelihood:
+\[
+f_3=\max\left\{\frac{1}{N_s}
+\sum_{s=1}^{N_s}d_s(X)\right\}
+\]
+where \(d_s=1\) if event \(s\) is detected and \(0\) otherwise.
+
+The broader framework also considers hydraulic, energy and topological performance.","The article compares the proposed RL-enhanced framework with a non-RL configuration for the broader water-network sectorisation and performance assessment.
+
+The non-RL configuration provides the baseline for comparing hydraulic and topological indicators.
+
+NSGA-II and SNS are components of the proposed hybrid framework, not independent comparator algorithms in the reported RL-versus-non-RL comparison.
+
+The article does not provide a comprehensive sensor-placement comparison against standalone GA, PSO or other conventional sensor-placement algorithms.","Not reported as a separate systematic hyperparameter-optimisation procedure.
+
+The article describes PPO policy updates and the use of a clipping parameter, but it does not provide a grid search, Bayesian optimisation or other explicit systematic hyperparameter-tuning procedure.","The PPO agent is trained through iterative interaction with the environment using an Actor-Critic learning architecture.
+
+At each interaction, the agent observes the current state, selects an action according to its policy and receives a reward based on task importance, completion effectiveness and collaborative efficiency. The environment then transitions to a new state.
+
+The Critic estimates the state-value function \(V(s_t)\), while Generalized Advantage Estimation is used to calculate action advantages. PPO updates the policy using its clipped objective to prevent excessively large policy changes.
+
+Within the wider optimisation framework, demand-weighted roulette-wheel selection generates candidate junction subdomains, and NSGA-II evolves sensor-placement configurations. Non-dominated solutions are retained across generations, while the remaining candidate positions are filled through roulette-wheel selection.
+
+The SNS component introduces imitation, conversation, disputation and innovation search behaviours to balance exploitation and exploration.
+
+The authors do not report a numerical PPO training-episode count, learning rate, discount factor, batch size, replay-buffer capacity, target-network update interval or explicit convergence threshold.","The water-quality sensor-placement formulation imposes a fixed sensor-budget constraint:
+\[
+\sum_{i=1}^{n}x_i=M
+\]
+where:
+- \(x_i\) indicates whether a sensor is installed at candidate junction \(i\).
+- \(n\) is the number of candidate junctions.
+- \(M\) is the specified number of sensors.
+The sensor-placement decision is therefore restricted to exactly \(M\) selected locations.
+
+The article does not report the numerical value of \(M\). It also does not provide explicit numerical sensor-spacing, installation-cost or location-accessibility constraints.","The article evaluates detection likelihood rather than reporting a conventional percentage detection-coverage metric.
+
+Detection likelihood is defined as:
+\[
+f_3=\frac{1}{N_s}\sum_{s=1}^{N_s}d_s(X)
+\]
+where \(d_s=1\) if contamination event \(s\) is detected and \(0\) otherwise.
+
+The authors report this measure as the proportion of contamination events detected by the selected sensor configuration. A complete network-wide percentage coverage value is not explicitly provided in the extracted numerical results.","Not reported as conventional classification accuracy. The study evaluates contamination detection likelihood, rather than precision, recall, F1-score or false-positive rate.","Expected contamination detection time is a principal optimisation objective.
+
+For each contamination event, the detection time is defined as the earliest detection time among the selected sensor locations:
+\[
+t_d^s(X)=\min_{x_i=1}\{t_d(x_i)\}
+\]
+The overall objective is to minimise the average detection time across contamination events.
+
+The article provides normalised detection-time values for selected zones, including a reported value of 0.85 for Zone 4. It does not provide a complete numerical table of absolute detection times in seconds or minutes for the entire network.","Not reported as a numerical sensor deployment cost. The article discusses the practical need to allocate monitoring resources selectively but does not quantify sensor purchase, installation or maintenance costs","The numerical sensor budget \(M\) is not reported. The paper specifies the fixed-budget constraint but does not state the number of water-quality sensors selected.
+
+The 10 flow meters reported in the network description are not the final water-quality sensor count.","The study reports improvements in hydraulic and topological performance, including pressure uniformity, resilience deviation, balance, modularity and average path length.
+
+However, it does not provide a detailed numerical evaluation of PPO training time, total optimisation runtime, memory requirements or computational complexity.
+
+The authors acknowledge that computational requirements, convergence behaviour, hyperparameter sensitivity and robustness across alternative initialisations require further investigation.","The proposed RL-enhanced framework is compared with a non-RL configuration for hydraulic and topological performance.
+
+The principal reported improvements include:
+- Resilience deviation index: 8.69 to 2.60, approximately 70% reduction.
+- Balance index: 1.27 to 1.01.
+- Modularity: 0.72 to 0.79, approximately 9.7% improvement.
+- Average path length: 9.82 to 8.65, approximately 11.9% reduction.
+- Average path-length deviation: 12.36 to 6.98, approximately 43.5% reduction.
+- Standard deviation of nodal pressure: 5.72 to 5.12, approximately 10.5% reduction.
+For water-quality monitoring, the authors report that the proposed framework addresses all three objectives simultaneously. However, the paper does not provide a sufficiently detailed standalone sensor-placement comparison to attribute all the reported hydraulic and topological improvements specifically to the sensor-placement component.","The authors report improvements in several hydraulic and topological indicators under the RL-enhanced configuration compared with the configuration without RL. The resilience deviation index decreased from 8.69 to 2.60, the balance index from 1.27 to 1.01, and the standard deviation of nodal pressure from 5.72 to 5.12. The modularity index increased from 0.72 to 0.79, while average path length decreased from 9.82 to 8.65 and average path-length deviation from 12.36 to 6.98. Other reported indicators included minimum, mean and maximum nodal pressure, resilience index, and total and worst edge cuts.
+
+The seven DMA sizes under the RL-enhanced configuration were 46, 46, 46, 46, 47, 46 and 49 nodes, compared with a range of 38–54 nodes without RL.
+
+For water-quality monitoring, the authors reported normalised values of 0.85 for expected detection time in Zone 4, 0.65 for contaminated-water volume in Zone 2, and 0.79 for detection likelihood in Zone 4. These are normalised values and should not be interpreted as absolute time, volume or percentage measurements.","The water-quality sensor-placement component uses three primary metrics:
+1. Expected detection time: Average earliest detection time across the simulated contamination events.
+2. Expected contaminated-water volume: Average volume of contaminated water across network junctions and time steps until detection.
+3. Detection likelihood: Proportion of contamination events detected by the selected sensor configuration.
+The wider sectorisation framework also evaluates:
+- Minimum nodal pressure.
+- Mean nodal pressure.
+- Maximum nodal pressure.
+- Standard deviation of nodal pressure.
+- Resilience index.
+- Resilience deviation index.
+- Balance index.
+- Total and worst number of edge cuts.
+- Modularity index.
+- Average path length.
+- Average path-length deviation.
+- Adjusted Mutual Information (AMI) for community-partition similarity.
+The paper distinguishes water-quality objectives from hydraulic and topological performance indicators. These should remain separate in the extraction and subsequent synthesis.",Not reported. The article discusses hydraulic and water-quality modelling but does not identify a specific simulation package or software version.,Not reported.,"Not reported. PPO and the Actor-Critic architecture are described, but no specific software library such as PyTorch or TensorFlow is identified.","Thi-Qar urban water distribution network, Iraq. The network is described as being supplied by the Euphrates River and the Al-Gharraf stream.
+
+The article does not provide a public repository or DOI for the network input files.","The study evaluates the hybrid framework on the Thi-Qar urban water distribution network.
+
+The experiments investigate:
+- Water-network sectorisation into seven DMAs.
+- Formation of four broader optimised zones.
+- Water-quality sensor placement for contamination detection.
+- Minimisation of expected contamination detection time.
+- Minimisation of expected contaminated-water volume.
+- Maximisation of contamination detection likelihood.
+- Hydraulic and topological performance under RL-enhanced and non-RL configurations.
+The paper also evaluates zone-specific water-quality performance and community-partition similarity.",Not reported. The article does not specify the number of independent experimental repetitions or random seed values.,Not reported. The article describes iterative PPO policy learning but does not provide a numerical episode count.,"Not reported. CPU, GPU, RAM, operating system and computing platform are not specified."
+18,Song 2022,Domain Knowledge-Based Evolutionary Reinforcement Learning for Sensor Placement,Clinton BLAKK,Mingxuan Song; Chengyu Hu; Wenyin Gong; Xuesong Yan,Domain Knowledge-Based Evolutionary Reinforcement Learning for Sensor Placement,	Sensors,Journal article,	10.3390/s22103799,2022,"NSF of China (Grant Nos. 62073300, U1911205, 62076225)",The authors declare no conflict of interest.,Simulation-based computational experiment,	Not reported,"Simulated water supply network (WSN), represented as a network of nodes and pipes and modelled for contamination-event detection.",Water-quality sensors for monitoring and detecting pollutant/contamination events. The sensor-placement algorithm selects network nodes at which these sensors are to be installed.,Not reported (the geographical location of the experimental network is not specified).,126 nodes,	168 pipes,"The numerical sensor budget and final number of sensors selected in the 126-node experimental network are not explicitly reported. Figure 1 presents an illustrative nine-node network with two sensors, but this example does not establish the sensor count used in the main experiment.","1 source and 2 tanks, as reported by the authors.",2 pumps and 8 valves.,"126 nodes; the authors do not explicitly classify the network as small, medium, or large.",The study aims to formulate the sensor placement problem in water supply networks as a sequential decision optimisation problem and develop a domain knowledge-based Evolutionary Reinforcement Learning (ERL) algorithm to identify effective sensor combinations. The proposed approach incorporates prior domain knowledge into the reinforcement learning model to improve the selection of sensor locations and reduce pollutant detection time.,"The study evaluates sensor placement for contamination-event detection in a simulated water supply network modelled as a network of nodes and pipes. The experimental network contains 126 nodes, 168 pipes, one source, two tanks, two pumps and eight valves. EPANET is used for hydraulic and water-quality simulation, with a five-minute simulation time step over a 96-hour period. The network's EPANET input files are obtained from the Exeter Centre for Water Systems (ECWS). The proposed domain knowledge-based Evolutionary Reinforcement Learning (ERL) algorithm is evaluated against Genetic Algorithm (GA) and Deep Reinforcement Learning (DRL) approaches. The specific EPANET version, programming language, reinforcement learning library and computational hardware are not reported.","In this article, WSN refers to water supply network, not wireless sensor network. Figure 1 presents an illustrative small network with nine nodes, two sources, one tank and 13 pipes; these are not the characteristics of the experimental network. The experimental network is separately described as having 126 nodes and 168 pipes. The authors do not identify a specific benchmark network name or geographical study location. The numerical sensor budget and final number of sensors selected in the 126-node experiment are not explicitly reported; the two sensors shown in Figure 1 belong only to the illustrative nine-node example.","The study proposes a domain knowledge-based Evolutionary Reinforcement Learning (ERL) algorithm for sensor placement in water supply networks. The authors formulate sensor placement as a sequential decision optimisation problem and develop a population-based learning approach that combines policy-gradient-based reinforcement learning with evolutionary computation. The proposed method incorporates prior domain knowledge derived from the individual pollutant detection-time performance of candidate sensor locations into the learning process. A pointer-network architecture is used to select sensor locations sequentially, while evolutionary operations, including crossover and mutation, are applied to improve the population of learning agents. The proposed approach is evaluated against Genetic Algorithm (GA) and Deep Reinforcement Learning (DRL) methods, with the objective of reducing pollutant detection time.","The experimental results indicate that the proposed domain knowledge-based Evolutionary Reinforcement Learning (ERL) algorithm achieved better sensor-placement performance than the meta-heuristic algorithms and deep reinforcement learning (DRL) comparator. The authors report that modelling sensor placement as a sequential decision optimisation problem improved the search process compared with conventional optimisation approaches. Incorporating prior domain knowledge, based on the individual detection-time performance of candidate sensor locations, further improved the ERL algorithm's search performance. Overall, the study demonstrates the potential of combining reinforcement learning, evolutionary computation and domain knowledge to identify sensor combinations that reduce pollutant detection time in water supply networks.","The authors identify the difficulty of solving sensor placement problems in large-scale water supply networks because the decision space increases rapidly with network size. They also discuss challenges associated with conventional deep reinforcement learning, including sparse-reward credit assignment, inadequate exploration and sensitivity to hyperparameters. The article highlights a trade-off between incorporating domain knowledge to improve algorithm performance and maintaining the generalisation ability of the model. Although the proposed ERL approach demonstrates improved performance, the authors describe the work as an initial demonstration of the feasibility and efficiency of applying ERL to sensor placement.
+
+The article does not explicitly provide a detailed future-work agenda. From the perspective of this review, further research opportunities include testing ERL on additional benchmark and real-world water distribution networks, evaluating its generalisation under different contamination scenarios and network uncertainties, and investigating scalability to larger networks. Further comparative evaluation, reproducibility through publicly available implementations and datasets, and assessment of the transferability of domain knowledge across networks would also strengthen the evidence base. These additional opportunities are review observations rather than explicit recommendations attributed to the authors.","The authors do not provide a separately structured or comprehensive statement of study limitations. However, the study identifies challenges associated with sensor placement in large-scale water supply networks, particularly the exponential growth of the decision space and computational complexity as network size increases. The proposed approach also relies on prior domain knowledge obtained by measuring individual sensor detection times across a set of pollution events. This introduces a requirement for preliminary evaluation of candidate sensor locations before the knowledge can be incorporated into the ERL model. The authors further report that Monte Carlo-based initial sequence generation was not particularly effective and that using independent population individuals without information sharing produced only a slight improvement in detection time.
+
+From a critical review perspective, the evidence presented does not establish the generalisability of the proposed method across a broad range of independently validated real-world networks. The article also does not provide sufficient evidence in the material reviewed to assess operational deployment, transferability of learned policies or performance under changing network conditions. These are reviewer-identified evidence limitations, not limitations explicitly acknowledged by the authors.","The study uses the open-source EPANET software to simulate the hydraulic and water-quality behaviour of the water supply network and the effects of contamination events. The authors state that the EPANET input files for the network can be obtained from the Exeter Centre for Water Systems (ECWS). The article therefore identifies publicly accessible sources for the simulation software and network input files. However, the Data Availability Statement does not explicitly provide a repository or download link for the authors’ ERL implementation, source code, trained models, or processed experimental results. The article reports important experimental configuration details, including the network characteristics, simulation time step and duration, and selected algorithm hyperparameters, which provide some methodological information for replication. Nevertheless, the availability of the original implementation and complete experimental data cannot be confirmed from the article.","Evolutionary Reinforcement Learning (ERL), specifically a domain knowledge-based Evolutionary Reinforcement Learning algorithm. The method combines policy-gradient-based deep reinforcement learning with an evolutionary strategy. Each population individual contains a neural-network-based agent that learns a stochastic policy for sequential sensor-node selection. The population evolves through genetic-algorithm-inspired crossover and mutation operations. Domain knowledge, derived from individual sensor-node detection times across pollution events, is incorporated into the neural-network input to improve the search process.","The proposed ERL uses a population-based architecture in which each individual is an agent represented by a neural network-based pointer network. The pointer network consists of one 128-unit fully connected feedforward linear layer, followed by an encoder and a decoder, each implemented using recurrent neural network (RNN) modules with 128 long short-term memory (LSTM) units. The encoder transforms the input features into a sequence of latent representations, while the decoder uses an attention-based pointing mechanism to select sensor nodes sequentially. The attention mechanism uses two parameter matrices and an attention vector to calculate selection probabilities. A masking mechanism prevents previously selected nodes from being selected again. Each agent learns a stochastic policy using policy-gradient optimisation and stochastic gradient descent. At the population level, neural-network parameters are encoded as chromosomes and evolved through crossover and mutation operations. Domain knowledge, derived from individual sensor detection-time measurements, is incorporated into the neural-network input.","The study formulates water-quality sensor placement as a sequential decision optimisation problem using a Markov Decision Process (MDP). Sensor locations are selected one at a time from the available network nodes. The initial state is an N-dimensional binary vector, where each element indicates whether a sensor has been placed at a candidate node. At each decision step, the ERL agent selects one previously unselected node, updates the state and continues until the required number of sensors has been placed. A pointer network generates a probability distribution over candidate nodes, while a masking mechanism prevents the repeated selection of previously chosen locations. The algorithm uses probabilistic node selection and parallel exploration of multiple candidate solutions to improve the search process. At the inference stage, multiple feasible sensor combinations are generated, and the combination with the shortest detection time is selected. The evolutionary component improves the policy through population-level crossover and mutation, while domain knowledge derived from individual sensor detection-time measurements guides the selection process.","The state is represented by an N-dimensional binary vector:
+
+\(x = [x_1, x_2, \ldots, x_N]\)
+
+where \(N\) is the total number of candidate nodes at which sensors can be installed. Each element \(x_i\) takes a binary value: 0 indicates that no sensor has been placed at node \(i\), while 1 indicates that a sensor has been placed there. The initial state is an all-zero vector. Each sensor-placement action changes the selected node's value from 0 to 1, while previously selected nodes retain their values. The process continues until the required number of sensors has been placed. The final binary vector therefore identifies the selected sensor locations. The state representation also accounts for previously selected nodes when determining subsequent placement actions.","The action space consists of selecting one candidate network node at each decision step. An action is represented by an N-dimensional binary vector:
+
+\(a = [a_1, a_2, \ldots, a_N]\)
+
+where \(a_i \in \{0,1\}\), and exactly one element is equal to 1. A value of 1 indicates the node selected for sensor placement in the current step, while all other elements are 0. The selected node must not have been chosen previously. A masking mechanism in the pointer network prevents the selection of previously selected nodes. Each action adds one sensor to the current configuration, and the process continues until the required number of sensors has been selected.","The ERL algorithm uses the expected minimum pollutant detection time as its optimisation objective. For a selected sensor combination, the detection time for each pollution event is the earliest time at which any selected sensor detects a non-zero pollutant concentration. The average minimum detection time across the pollution-event set is calculated and used to evaluate the selected sensor combination.
+
+The policy is updated using a policy-gradient method. The gradient incorporates the difference between the detection time \(t_j\) of the current candidate solution and an exponential moving average baseline \(b\):
+\[
+(t_j-b)\nabla_\theta \log p_\theta(S|V)
+\]
+The baseline is updated using:
+\[
+b'_j=\alpha b_j+(1-\alpha)t_j
+\]
+where \(\alpha\) is the baseline smoothing coefficient. The algorithm seeks to minimise detection time: solutions with shorter detection times relative to the baseline influence the policy update favourably. The authors use stochastic gradient descent to update the neural-network parameters.","The primary objective is to minimise the average pollutant detection time across the considered pollution events by identifying an effective combination of water-quality sensor locations. For each pollution event, the detection time is determined by the earliest time at which at least one selected sensor detects a non-zero pollutant concentration. The ERL algorithm therefore seeks a sensor configuration that reduces the average minimum detection time across the event set. The study also considers the computational efficiency of the search process and the ability of the proposed method to identify effective sensor combinations in large-scale water supply networks.","The proposed domain knowledge-based ERL algorithm is evaluated against two principal comparator algorithms:
+1. Genetic Algorithm (GA): A population-based evolutionary optimisation algorithm in which each chromosome represents a sensor-placement configuration. The GA uses parent selection, multiple-point crossover and single-point mutation to generate successive populations.
+2. Deep Reinforcement Learning (DRL): A neural-network-based reinforcement learning approach that uses the same underlying network architecture as the ERL agents but does not incorporate the evolutionary population mechanisms.
+The study also conducts internal ERL ablation and configuration comparisons, examining the effects of domain knowledge, probabilistic versus greedy node selection, multi-threaded search and evolutionary computation operators. These are component-level comparisons within ERL rather than separate baseline algorithms.","The study does not report the use of an automated hyperparameter optimisation method such as grid search or Bayesian optimisation. Instead, the authors specify algorithm hyperparameters and conduct sensitivity experiments to examine the effects of different ERL components and configurations. For the DRL comparator, the mini-batch size is 512, the search step length is 500, the learning rate is \(1 \times 10^{-2}\), the baseline attenuation coefficient is \(\alpha = 0.99\), and the gradient norm is clipped to 1.0. Neural-network parameters are initially sampled uniformly from the interval \((-0.8, 0.8)\). For ERL, the crossover and mutation probabilities are both set to 0.6 and 0.1, respectively. The GA comparator also uses crossover and mutation probabilities of 0.6 and 0.1, respectively, and terminates after 500 generations. The ERL sensitivity experiments investigate the effects of domain knowledge, initial sequence generation, population evolution and node-selection strategies.","The proposed Evolutionary Reinforcement Learning (ERL) algorithm uses an iterative, population-based training strategy that combines policy-gradient learning with evolutionary computation. Initially, a population of neural-network-based agents is created, with each individual representing an ERL policy. Each agent generates candidate sensor combinations through sequential node selection using its stochastic policy. The detection time of each candidate combination is evaluated against the pollution-event set, and the policy parameters are updated using policy-gradient optimisation and stochastic gradient descent. An exponential moving average baseline is incorporated into the gradient update.
+
+Following the individual learning stage, the population undergoes evolutionary operations. Neural-network parameters are encoded as chromosomes and modified through crossover and mutation. The crossover and mutation probabilities are set to 0.6 and 0.1, respectively. Individual policy learning and population evolution are repeated iteratively until the stopping condition is reached. The authors report the algorithm comparison after 500 iterations.
+
+The training strategy also incorporates parallel exploration and probabilistic node selection. Multiple candidate sensor combinations are explored, and the best-performing combination, based on pollutant detection time, is retained. Domain knowledge derived from individual sensor detection-time measurements is supplied as prior input to guide policy learning.","The sensor-placement problem is subject to a fixed sensor-budget constraint: only a limited, predetermined number of sensors can be installed across the candidate network nodes. The placement process must continue until the specified number of sensors has been selected. Each sensor must occupy a distinct candidate node; therefore, duplicate placement at the same node is prohibited. The action-selection mechanism enforces this restriction through a masking array that prevents previously selected nodes from being selected again.
+
+The study also recognises practical deployment constraints, including the economic costs of purchasing, installing and maintaining water-quality sensors, as well as geographical and network-layout limitations. However, these practical considerations are discussed as motivations for limiting sensor deployment rather than being implemented as separate cost or geographical constraints in the ERL optimisation formulation.","The study does not explicitly report detection coverage as a percentage or as the proportion of pollution events detected by the selected sensor configuration. Instead, it evaluates sensor-placement performance using the average minimum detection time across a set of pollution events. A pollution event is considered detected when at least one selected sensor first registers a non-zero pollutant concentration. If none of the selected sensors detects an event during the simulation period, the detection time for that event is assigned the full simulation duration (96 hours). Therefore, detection coverage as a separate quantitative metric is not reported.","The study does not report detection accuracy as a percentage, nor does it calculate conventional classification metrics such as precision, recall, F1-score or false-positive rate. Instead, sensor-placement performance is evaluated by measuring the average minimum pollutant detection time across a set of pollution events. A pollution event is detected when at least one selected sensor first registers a non-zero pollutant concentration. Events not detected within the simulation period are assigned the full simulation duration as their detection time. Consequently, the study evaluates the timeliness of contamination detection rather than detection accuracy as a separate quantitative metric.","Detection time is the principal performance metric used to evaluate the proposed ERL sensor-placement approach. For each pollution event, it is measured as the elapsed time between the occurrence of contamination and the first detection of a non-zero pollutant concentration by any selected sensor. The study calculates the minimum detection time for each event and then determines the average minimum detection time across the pollution-event set. If an event is not detected during the simulation period, its detection time is assigned the full simulation duration of 96 hours.
+
+The experimental simulation uses a five-minute time step. After 500 iterations, the reported average detection times are:
+- Genetic Algorithm (GA): 1,195.606 simulation time steps (approximately 5,978.03 minutes).
+- Deep Reinforcement Learning (DRL): 1,278.162 simulation time steps (approximately 6,390.81 minutes).
+- Evolutionary Reinforcement Learning (ERL): 1,192.254 simulation time steps (approximately 5,961.27 minutes).
+ERL achieves the lowest average detection time among the three algorithms. The results indicate a modest improvement over GA and a larger improvement over DRL.","The study does not report a numerical sensor deployment cost or conduct an economic cost analysis of the selected sensor configurations. Although the authors discuss the practical importance of limiting the number of sensors because of purchasing, installation and maintenance costs, these costs are not incorporated as a quantified optimisation objective or reported as an experimental performance measure. The study focuses on minimising pollutant detection time through the selection of sensor locations. Therefore, sensor deployment cost, installation cost and maintenance cost are not quantitatively evaluated.","The numerical sensor budget and final number of sensors selected in the 126-node experimental network are not explicitly reported. Figure 1 presents an illustrative nine-node network with two sensors, but this example does not establish the sensor count used in the main experiment.","Computational performance is assessed mainly through the convergence behaviour and search efficiency of the algorithms. The authors compare the progress of GA, DRL and ERL over 500 iterations. They report that GA has the highest convergence rate, whereas DRL converges more slowly. ERL achieves the lowest average detection time after the reported iterations. The sensitivity experiments also examine the effects of domain knowledge, probabilistic node selection, multi-threaded search and evolutionary computation operators on the search process. Incorporating domain knowledge improves the search results and reduces the number of steps required to reach the reported solution. However, the article does not provide a comprehensive numerical comparison of total execution time, CPU time, memory consumption or hardware utilisation. Consequently, computational performance is evaluated primarily through convergence and search behaviour rather than standard runtime and resource-consumption benchmarks.","The proposed domain knowledge-based Evolutionary Reinforcement Learning (ERL) algorithm is compared with Genetic Algorithm (GA) and Deep Reinforcement Learning (DRL) after 500 iterations. According to Table 1, ERL achieves the lowest average pollutant detection time of 1,192.254 five-minute time steps, compared with 1,195.606 for GA and 1,278.162 for DRL. These correspond to approximately 5,961.27 minutes for ERL, 5,978.03 minutes for GA and 6,390.81 minutes for DRL.
+
+ERL therefore achieves an approximately 0.28% reduction in average detection time compared with GA and a 6.72% reduction compared with DRL, using the precise Table 1 values. Although GA demonstrates the fastest convergence rate during the search process, ERL ultimately obtains the lowest average detection time. DRL converges more slowly and produces the highest average detection time among the three algorithms.
+
+The authors also conduct sensitivity experiments to evaluate the contribution of individual ERL components. The complete ERL configuration, incorporating domain knowledge, probabilistic node selection, multi-threaded search and evolutionary computation operators, achieves an average detection time of 1,192.25 five-minute time steps. This is better than configurations that remove domain knowledge (1,237.8), probabilistic selection (1,353.23), multi-threaded search (1,255.95) or evolutionary computation operators (1,217.55). These findings indicate that the combined components contribute to the performance of the proposed approach.
+
+Overall, ERL outperforms the two principal comparator algorithms in terms of final average pollutant detection time, although its improvement over GA is relatively small. The results support the value of integrating reinforcement learning, evolutionary computation and domain knowledge for sequential sensor-placement optimisation.
+
+Numerical clarification: The reduction relative to DRL is approximately 6.72%, not 6.95%. The calculation uses the Table 1 values:
+\[
+\frac{1278.162-1192.254}{1278.162}\times100
+=6.72\%
+\]
+The corresponding reduction relative to GA is approximately 0.28%.","The main quantitative comparison is reported in Table 1 after 500 iterations. The average pollutant detection times are:
+- Genetic Algorithm (GA): 1,195.606 units of five-minute simulation time steps.
+- Deep Reinforcement Learning (DRL): 1,278.162 units of five-minute simulation time steps.
+- Evolutionary Reinforcement Learning (ERL): 1,192.254 units of five-minute simulation time steps.
+Since each simulation time step represents five minutes, these values correspond to approximately 5,978.03 minutes for GA, 6,390.81 minutes for DRL and 5,961.27 minutes for ERL. ERL achieves the lowest average detection time, improving on GA by approximately 0.28% and on DRL by approximately 6.72%.
+
+The sensitivity analysis further demonstrates the contribution of individual ERL components. In Table 3, the complete ERL configuration (For Comparison) achieves an average detection time of 1,192.25 five-minute time steps, compared with 1,237.8 for configuration B, 1,353.23 for configuration C1, 1,255.95 for configuration C2 and 1,217.55 for configuration D. The complete configuration also reports 137 in the column labelled “Optimal Algebra”, compared with 174, 268, 416 and 146, respectively. These values are reproduced using the article's terminology and are not reinterpreted as execution time.
+
+Overall, the results indicate that the proposed domain knowledge-based ERL achieves the best average detection-time performance among the three principal algorithms, while the sensitivity experiments demonstrate the contribution of domain knowledge, probabilistic selection, multi-threaded search and evolutionary operators.","The main quantitative comparison is reported in Table 1 after 500 iterations. The average pollutant detection times are:
+- Genetic Algorithm (GA): 1,195.606 units of five-minute simulation time steps.
+- Deep Reinforcement Learning (DRL): 1,278.162 units of five-minute simulation time steps.
+- Evolutionary Reinforcement Learning (ERL): 1,192.254 units of five-minute simulation time steps.
+Since each simulation time step represents five minutes, these values correspond to approximately 5,978.03 minutes for GA, 6,390.81 minutes for DRL and 5,961.27 minutes for ERL. ERL achieves the lowest average detection time, improving on GA by approximately 0.28% and on DRL by approximately 6.72%.
+
+The sensitivity analysis further demonstrates the contribution of individual ERL components. In Table 3, the complete ERL configuration (For Comparison) achieves an average detection time of 1,192.25 five-minute time steps, compared with 1,237.8 for configuration B, 1,353.23 for configuration C1, 1,255.95 for configuration C2 and 1,217.55 for configuration D. The complete configuration also reports 137 in the column labelled “Optimal Algebra”, compared with 174, 268, 416 and 146, respectively. These values are reproduced using the article's terminology and are not reinterpreted as execution time.
+
+Overall, the results indicate that the proposed domain knowledge-based ERL achieves the best average detection-time performance among the three principal algorithms, while the sensitivity experiments demonstrate the contribution of domain knowledge, probabilistic selection, multi-threaded search and evolutionary operators.","The study uses EPANET, an open-source software package for extended-period hydraulic and water-quality simulation, to simulate the effects of contamination events in the water supply network. EPANET is used to model the hydraulic and water-quality behaviour of the experimental network. The authors do not specify the EPANET software version used in the experiments.","The programming language used to implement the proposed evolutionary reinforcement learning algorithm, neural-network architecture and experimental procedures is not explicitly identified in the article. Although the authors describe the algorithm and its software implementation, they do not specify whether Python, MATLAB, C++, Java or another programming language was used.","The article describes a custom implementation of a domain knowledge-based Evolutionary Reinforcement Learning (ERL) algorithm using a pointer-network architecture, an encoder–decoder structure, LSTM units, an attention mechanism and policy-gradient optimisation. Stochastic gradient descent (SGD) is used to update the neural-network parameters. However, the authors do not identify a specific reinforcement learning framework or deep learning library, such as PyTorch, TensorFlow or Keras. The implementation should therefore be classified as a custom ERL implementation, with the underlying software framework or library not reported.","The experimental network data are obtained from the Exeter Centre for Water Systems (ECWS). The authors state that the network's EPANET input files can be downloaded from the ECWS website. EPANET is used to simulate hydraulic and water-quality behaviour and the effects of contamination events. The experimental network contains 126 nodes, one source, two tanks, 168 pipes, two pumps and eight valves. The article does not identify the network using a specific benchmark name. The authors also do not provide a separate repository for the ERL source code, trained models or processed experimental results.
+
+Network input source: Exeter Centre for Water Systems (ECWS), University of Exeter.
+Hydraulic and water-quality simulation software: EPANET.
+Specific benchmark name: Not reported.","The experiments investigate contamination-event detection through optimal placement of water-quality sensors in a simulated water supply network. The proposed ERL algorithm is evaluated against a Genetic Algorithm (GA) and a Deep Reinforcement Learning (DRL) comparator. The principal experimental scenario involves selecting sensor locations to minimise average pollutant detection time across a set of pollution events. The network is simulated using EPANET with a five-minute time step over a 96-hour simulation period.
+
+Additional experiments investigate the effects of incorporating domain knowledge into the ERL model, alternative initial sensor-selection sequences, probabilistic versus greedy node selection, multi-threaded search and evolutionary computation operations. These sensitivity experiments assess the contribution of different algorithmic components to sensor-placement performance.
+
+The study does not present a separate experimental comparison of leak-detection scenarios, different hydraulic networks, or explicitly varied numerical sensor budgets.","The article does not explicitly report the number of independent experimental repetitions or random seeds used to evaluate the ERL, DRL and GA algorithms. Although the experiments involve iterative algorithm execution and comparisons over 500 iterations, the authors do not specify whether the reported results are averages across independent runs, repeated trials or different random seeds. The number of independent runs and the random seed values are therefore not reported.","The proposed ERL algorithm uses iterative policy learning and evolutionary population updates. Algorithm 1 describes the training procedure using an iteration/episode variable, while the experimental comparison reports algorithm performance after 500 iterations. However, the article does not separately specify a conventional reinforcement learning training-episode count for ERL, nor does it clearly distinguish the number of policy-learning episodes from the number of evolutionary iterations. The DRL comparator is also evaluated within the reported iterative comparison, but a separate numerical training-episode count is not explicitly provided. Therefore, 500 iterations should be recorded as the reported algorithm comparison limit, rather than automatically interpreted as 500 independent training episodes.
+Reported comparison limit: 500 iterations.
+Explicit ERL training episodes: Not separately reported.
+Explicit DRL training episodes: Not separately reported.
+","The article does not provide detailed information about the computational hardware or execution environment used for the experiments. Specific CPU and GPU models, RAM capacity, operating system, processor specifications and computing platform are not reported. Although the proposed algorithm incorporates multi-threaded search as part of its computational strategy, the authors do not provide sufficient hardware details to establish the exact execution environment or reproduce its computational resource requirements.
+
+CPU: Not reported.
+GPU: Not reported.
+RAM: Not reported.
+Operating system: Not reported.
+Computing environment: Not reported."
+8,Sukya 2026,SPARC: Sensor Placement for Accurate Risk Contaminant Detection in Water Distribution Networks Using Deep Q-Network and Grid Search,Clinton BLAKK,Fadelis Sukya; Ary Mazharuddin Shiddiqi; Saad Ali Alahmari; Ervin Nurhayati; Anton Satria Prabuwono; Arif Bramantoro; Fawaz Delaim Alharbi,SPARC: Sensor Placement for Accurate Risk Contaminant Detection in Water Distribution Networks Using Deep Q-Network and Grid Search.,IEEE Access.,Journal article,10.1109/ACCESS.2026.3659257,2026,"The study was supported and funded by the Deanship of Scientific Research at Imam Mohammad Ibn Saud Islamic University (IMSIU), grant number IMSIU-DDRSP2602.",Not reported.,Simulation-based computational experiment,"The study uses four water distribution network benchmark datasets:
+- FOS (Fossiron)
+- JILIN
+- ZJ
+- BWSN","Simulated benchmark water distribution networks. The networks are represented using graph-based structures consisting of nodes and links, with hydraulic and contamination propagation behaviour simulated using EPANET.",Water-quality sensors for detecting contaminant events in clean water distribution networks. The sensors are positioned at selected network nodes to monitor contamination propagation and identify contamination scenarios.,Not applicable (benchmark networks). The experiments use benchmark network datasets rather than a geographically identified real-world WDN case study.,FOS: 36 junctions; JILIN: 27 junctions; BWSN: 128 junctions; ZJ: 114 junctions.,FOS: 58 pipes; JILIN: 34 pipes; BWSN: 169 pipes; ZJ: 184 pipes.,"A fixed budget of K = 10 sensors is used across all four benchmark networks. Each DQN episode involves selecting 10 sensor locations, with a maximum of 10 placement steps per episode.","Number of reservoirs and tanks:
+- FOS: 1 reservoir and 0 tanks.
+- JILIN: 1 reservoir and 3 tanks.
+- ZJ: 2 reservoirs and 2 tanks.
+- BWSN: 1 reservoir and 2 tanks.",Not reported. The network characteristics presented in Table 3 do not specify the number of pumps or valves for the four benchmark networks.,"FOS: Small, semi-loop network. JILIN: Medium, semi-loop network. BWSN: Large, full-loop network. ZJ: Large, full-loop network.","The study aims to evaluate the effectiveness of Deep Q-Network (DQN) for determining optimal sensor locations in clean water distribution networks for contaminant detection. It further seeks to improve DQN performance through systematic hyperparameter optimisation using Grid Search and to assess the resulting sensor-placement strategies using detection coverage, detection time and cumulative reward. The study compares tuned DQN, untuned DQN and a Greedy Algorithm across multiple benchmark networks.","The experiments are conducted using simulated water distribution network datasets obtained from the University of Kentucky Water Distribution Systems database. Four benchmark networks—FOS (Fossiron), JILIN, ZJ and BWSN—are used to evaluate the proposed sensor-placement approach.
+
+The network structures are represented as graphs consisting of nodes and links. Contamination scenarios are simulated using EPANET hydraulic modelling software, which models water flow and water-quality behaviour over time. Contaminant injection is represented as the release of a harmful substance at a specified network node over a defined time interval.
+
+The DQN agent interacts with the simulated environment and selects sensor locations sequentially. Grid Search is subsequently applied to optimise selected DQN hyperparameters. The study compares the tuned DQN-based SPARC framework with an untuned DQN model and a Greedy Algorithm.
+
+The authors report that the experiments were conducted in a controlled computational environment and provide hardware and software configurations in Table 4. The training configuration includes 1,000 episodes, a maximum of 10 placement steps per episode, a batch size of 32, a replay memory capacity of 2,000 transitions, a learning rate of 0.001, a discount factor of 0.99 and an epsilon decay rate of 0.995.","The study uses four benchmark WDN datasets: FOS, JILIN, ZJ and BWSN. Although the experiments cover all four networks, the detailed sensor-placement maps and principal visualisations focus on FOS. Overall comparative results across the four networks are reported in Table 7.
+
+The sensor budget is fixed at 10 sensors for every network. Consequently, the results represent a controlled comparison under a common sensor budget rather than an investigation of the optimal sensor count for each network.
+
+The authors explicitly clarify that SPARC does not introduce a new reinforcement learning or optimisation algorithm. Its contribution is the application of DQN to sequential sensor placement and the systematic evaluation of tuned and untuned DQN configurations using Grid Search.","The study presents SPARC, a DQN-based framework for sequential sensor placement in water distribution networks for contaminant detection. Sensor placement is formulated as a Markov Decision Process in which the agent selects unoccupied network nodes sequentially until the fixed sensor budget is reached.
+
+The framework integrates systematic Grid Search hyperparameter optimisation to investigate the effects of learning rate, discount factor, batch size and epsilon decay on DQN performance. It evaluates the tuned DQN model against an untuned DQN model and a Greedy Algorithm.
+
+The study also provides a comparative assessment across four benchmark networks using detection coverage, detection time and cumulative reward. The authors emphasise that the contribution is a domain-specific and reproducible evaluation of DQN behaviour rather than the development of a new reinforcement learning algorithm.","The results indicate that SPARC demonstrates competitive contamination-detection performance compared with the Greedy Algorithm and the untuned DQN model, although its relative performance varies across the four benchmark networks. For FOS, SPARC achieves 81.08% detection coverage and an average detection time of 1.07 seconds, compared with 70.27% and 5.23 seconds for the Greedy Algorithm, and 78.38% and 2.07 seconds for the untuned DQN model. Across the four networks, SPARC generally achieves improved detection coverage, but it does not consistently outperform both comparison methods on every metric. For example, the Greedy Algorithm achieves higher coverage than SPARC on JILIN, while SPARC records a longer average detection time than both comparators on BWSN.
+
+The statistical analysis reports a significant improvement in detection coverage, with p = 0.031 in the abstract and Table 6. However, the discussion section reports a different coverage p-value of 0.0423. The difference in average detection time is reported as statistically insignificant (p = 0.576). These findings suggest that Grid Search-based hyperparameter tuning improves the tested DQN configuration, particularly in detection coverage, but do not establish universal superiority over other sensor-placement algorithms.","The authors identify several areas for further investigation:
+1. Extending the evaluation to representative Genetic Algorithm, Particle Swarm Optimisation, lean graph and integer-programming baselines.
+2. Investigating the effects of different sensor budgets across networks of varying sizes.
+3. Applying Bayesian Optimisation and Neural Architecture Search to improve computational efficiency in hyperparameter optimisation.
+4. Extending the framework towards Multi-Agent Reinforcement Learning to improve scalability and coordination.
+5. Incorporating real-time flow dynamics and demand uncertainty.
+6. Improving the framework's ability to handle larger and more complex water distribution networks.
+The authors also identify the need to consider stochastic demand, uncertainty-aware contamination simulations, sensor reliability, heterogeneous installation costs and explicit feasibility constraints.","The authors acknowledge several simplifying assumptions that limit the realism of the proposed framework.
+
+The hydraulic and water-quality model is treated as deterministic, with fixed demand patterns and network parameters. Demand variability and parameter uncertainty are not explicitly modelled. Sensors are assumed to be perfectly reliable, without malfunction, communication failure or calibration drift.
+
+The study also assumes homogeneous installation and maintenance costs and permits sensor placement at all demand nodes without explicitly representing forbidden locations or cost heterogeneity.
+
+A fixed budget of 10 sensors is used across networks of different sizes. The authors acknowledge that larger networks, such as BWSN and ZJ, would likely require higher sensor budgets in practical deployments. Therefore, the results should be interpreted as methodological comparisons under a fixed budget rather than deployment-ready recommendations.
+
+The comparator selection is also limited: the authors acknowledge that GA, PSO, lean graph and integer-programming approaches were not included in the main experimental comparison.","The study uses publicly accessible water distribution network datasets from the University of Kentucky Water Distribution Systems database: https://www.uky.edu/WDST/database.html. EPANET is used for hydraulic and water-quality simulation. The authors provide details of the DQN architecture, hyperparameter optimisation procedure, sensor budget and experimental configuration. The article's Data Availability statement indicates that no datasets were generated or analysed during the study. A dedicated repository containing the SPARC source code, trained models or complete experimental outputs is not identified in the article. Consequently, the benchmark network data are publicly accessible, but the availability of the complete implementation and processed experimental artefacts cannot be confirmed.","Deep Q-Network (DQN).
+
+The DQN agent learns a sensor-placement policy through interaction with a simulated water distribution network environment. Grid Search is used to optimise selected DQN hyperparameters. The proposed SPARC framework is therefore a DQN-based sensor-placement approach with systematic hyperparameter tuning.","The DQN uses a feedforward neural network to approximate the action-value function \(Q(s,a)\), which estimates the expected cumulative reward for taking an action in a given state.
+
+The architecture comprises:
+- An input layer representing the current sensor-placement state as a binary vector.
+- Two to three fully connected hidden layers, each containing between 64 and 256 neurons.
+- ReLU activation functions in the hidden layers.
+- An output layer producing Q-values for the feasible sensor-placement actions.
+The agent selects the next sensor location based on the estimated Q-values for the available unoccupied nodes. The architecture uses experience replay, with a replay memory capacity of 2,000 transitions, and batch-based network updates.","Sensor placement is formulated as a sequential decision-making problem using a Markov Decision Process. The agent begins with an empty sensor configuration and selects one unoccupied network node at each decision step.
+
+Each selected node is added to the current sensor configuration. The process continues until the fixed sensor budget of 10 sensors has been reached. The final configuration is therefore a set of 10 selected sensor locations.
+
+The DQN learns which node to select based on the current sensor configuration and the reward received after each placement. Grid Search is subsequently used to identify a more effective hyperparameter configuration for the DQN agent.","The state at time step \(t\) is represented by an N-dimensional binary vector:
+\[
+s_t=[x_1,x_2,\ldots,x_N]
+\]
+where \(N\) is the total number of nodes in the water distribution network.
+
+Each element is defined as:
+\[
+x_i =
+\begin{cases}
+1, & \text{if a sensor has been placed at node } i\\
+0, & \text{otherwise}
+\end{cases}
+\]
+The state therefore represents the current sensor-placement configuration and indicates which network nodes have already been selected.
+
+The authors also classify the state as an intermediate state when fewer than \(K\) sensors have been placed and a terminal state when the required number of sensors has been reached.","At each decision step, the agent selects one unoccupied network node as the next sensor location.
+
+The available action set is:
+\[
+A(s_t)=\{i\in V\mid x_i=0\}
+\]
+where \(V\) represents the set of all network nodes.
+
+If \(k\) sensors have already been placed, the number of available actions is:
+\[
+|A(s_t)|=N-k
+\]
+Each action adds one sensor to the current configuration. The process continues until the fixed budget of \(K=10\) sensors has been selected. Previously occupied nodes cannot be selected again.","The reward function encourages sensor placements that improve detection coverage and reduce average contamination detection time.
+
+After placing a sensor at time step \(t\), the environment recalculates detection coverage \(C_t\) and average detection time \(T_t\). The changes are defined as:
+\[
+\Delta C_t=C_t-C_{t-1}
+\]
+\[
+\Delta T_t=T_t-T_{t-1}
+\]
+The reward is:
+\[
+r_t=\alpha\cdot\Delta C_t-\beta\cdot\Delta T_t
+\]
+where:
+- \(\alpha\) is the user-defined weight assigned to detection-coverage improvement.
+- \(\beta\) is the user-defined weight assigned to detection-time reduction.
+Positive rewards indicate improvements in overall detection performance, zero rewards indicate no net change, and negative rewards indicate degradation.
+
+The authors explain that the DQN receives the continuous reward during training rather than converting it into a discrete positive, zero or negative reward.","The study formulates sensor placement as a multi-objective optimisation problem with two principal objectives:
+1. Maximise detection coverage across contamination scenarios.
+2. Minimise average contamination detection time.
+The optimisation problem is expressed as:
+\[
+\max_{S\subseteq V} DC(S)
+\]
+\[
+\min_{S\subseteq V} DT(S)
+\]
+subject to constraints including the available sensor budget and network topology.
+
+Cumulative reward is also used to assess the learning performance of the DQN agent.","The proposed SPARC framework is compared against:
+1. Greedy Algorithm: Selects sensor locations incrementally according to local coverage improvement.
+2. Untuned DQN: A DQN model trained using its initial hyperparameter configuration without the Grid Search optimisation applied in SPARC.
+The article does not include a direct experimental comparison against GA, PSO or integer programming. The authors explicitly acknowledge this as a limitation of the comparator selection.","The study employs Grid Search to systematically explore predefined DQN hyperparameter configurations. The parameters considered include learning rate (α), discount factor (γ), epsilon decay factor (ε), batch size and replay memory size. Each candidate configuration is trained and evaluated using detection coverage, average detection time and cumulative reward. The optimisation objective combines these performance measures, as expressed in Equation 19, to identify the best-performing configuration for the final experiments. The reported DQN training configuration includes a learning rate of 0.001, discount factor of 0.99, epsilon decay rate of 0.995, batch size of 32 and replay memory capacity of 2,000 transitions. However, the complete numerical search ranges and an unambiguous final optimal hyperparameter configuration are not reported.","The DQN agent is trained through repeated interaction with the simulated water distribution network environment. The initial training configuration comprises 1,000 episodes, with a maximum of 10 placement steps per episode, corresponding to the fixed sensor budget of \(K=10\). At each step, the agent selects an unoccupied network node using an epsilon-greedy policy, observes the resulting reward and next state, and stores the transition in an experience replay buffer.
+
+The replay buffer has a capacity of 2,000 transitions, and batches of 32 samples are used to update the online Q-network. The initial learning rate is 0.001, the discount factor is 0.99, and the epsilon decay rate is 0.995. A separate target network is periodically synchronised with the online network to calculate target Q-values and support temporal-difference learning.
+
+Grid Search evaluates predefined combinations of DQN hyperparameters. For each configuration, the DQN is trained and evaluated using detection coverage, average detection time and cumulative reward. The best-performing configuration is subsequently selected for the final sensor-placement evaluation.
+
+The study reports 1,000 episodes for its initial DQN configuration. Figures 3 and 4 also display reward-convergence comparisons involving 1,000- and 2,000-episode training configurations. These should not be confused with the number of independent experimental runs.
+
+The article describes gradient-descent parameter updates and also mentions the Adam optimiser. Do not assume that every experiment used one particular optimiser without further clarification.","The study imposes a fixed sensor-budget constraint:
+\[
+K=10
+\]
+Each episode involves selecting exactly 10 sensor locations. The agent selects only unoccupied nodes, preventing duplicate sensor placement at the same location.
+
+The authors assume that sensors can be placed at all demand nodes. The framework does not explicitly encode forbidden locations, heterogeneous installation costs or location-specific feasibility constraints.
+
+The authors also assume homogeneous installation and maintenance costs and perfectly reliable sensors.","Detection coverage
+Detection coverage is defined as the percentage of contamination scenarios successfully detected:
+\[
+DC=\frac{N_d}{N_t}\times100\%
+\]
+where:
+- \(N_d\) is the number of detected contamination scenarios.
+- \(N_t\) is the total number of simulated contamination scenarios.
+For the FOS network, Table 5 reports:
+- Greedy Algorithm: 70.27%.
+- Untuned DQN: 78.38%.
+- SPARC: 81.08%.
+The study also reports coverage results across JILIN, ZJ and BWSN in Table 7.","The article does not report conventional classification accuracy, precision, recall, F1-score or false-positive rate as separate evaluation metrics.
+
+Instead, the study evaluates contamination-detection effectiveness primarily through detection coverage and detection time. Detection coverage represents the percentage of contamination scenarios successfully detected.","Average detection time is defined as:
+\[
+DT=\frac{1}{N_d}\sum_{i=1}^{N_d}(t_{di}-t_{0i})
+\]
+where:
+- \(t_{0i}\) is the contamination start time for scenario \(i\).
+- \(t_{di}\) is the detection time for scenario \(i\).
+- \(N_d\) is the number of detected contamination scenarios.
+For the FOS network, Table 5 reports:
+Method	Total detection time	Average detection time
+Greedy Algorithm	136 s	5.23 s
+Untuned DQN	123 s	2.07 s
+SPARC	67 s	1.07 s
+
+
+SPARC achieves the lowest average detection time among the three evaluated methods on FOS.","The study does not report a numerical sensor deployment cost or conduct an economic cost analysis.
+
+Although the authors discuss installation and maintenance costs as practical considerations, these costs are not quantified or incorporated as a separate optimisation objective.","The proposed framework uses a fixed budget of 10 sensors per episode across all four benchmark networks.
+
+The agent selects 10 sensor locations sequentially, with one sensor added at each decision step. The study does not investigate the optimal sensor count for each network.","The authors evaluate computational performance mainly through DQN training behaviour, cumulative reward, detection coverage and detection time.
+
+The study reports experiments with 1,000 training episodes for the initial DQN configuration and compares the tuned and untuned models. Grid Search is used to improve the model's hyperparameter configuration.
+
+The authors also provide hardware and software specifications in Table 4. The article discusses the computational cost of Grid Search and acknowledges that more advanced optimisation methods may improve efficiency.
+
+The study does not provide a comprehensive comparison of computational complexity, memory consumption or total training time across all methods in the material reviewed.","The SPARC framework is evaluated against a Greedy Algorithm and an untuned Deep Q-Network (DRL DQN) across four benchmark networks: JILIN, FOS, ZJ and BWSN. The results show that the relative performance of the methods varies according to network structure and size.
+
+For JILIN, SPARC achieves 82.14% detection coverage and an average detection time of 3.32 seconds. The Greedy Algorithm achieves higher coverage (85.71%) but a longer average detection time (19.79 seconds), while the untuned DQN achieves 64.29% coverage and 2.09 seconds.
+
+For FOS, SPARC achieves 81.08% coverage and 1.07 seconds average detection time, outperforming the Greedy Algorithm and untuned DQN in both reported measures.
+
+For ZJ, SPARC achieves 57.02% coverage and 39.58 seconds average detection time, compared with 28.07% and 60.78 seconds for Greedy, and 53.51% and 40.73 seconds for untuned DQN.
+
+For BWSN, SPARC achieves 60.47% coverage and 43.39 seconds average detection time. It improves coverage over Greedy and untuned DQN but has a longer average detection time than both methods.
+
+Overall, SPARC demonstrates improved detection coverage across most of the evaluated networks, but its detection-time performance is not uniformly superior. The findings therefore support the benefits of Grid Search-based DQN tuning under the tested configurations, rather than universal superiority over alternative methods.","The principal quantitative results reported in Table 7 compare the Greedy Algorithm, untuned DQN and SPARC across the four benchmark networks: JILIN, FOS, ZJ and BWSN.
+Network	Method	Coverage	Nodes covered	Total detection time	Average detection time
+JILIN	Greedy	85.71%	24	475 s	19.79 s
+JILIN	DRL DQN	64.29%	18	71 s	2.09 s
+JILIN	SPARC	82.14%	23	113 s	3.32 s
+FOS	Greedy	70.27%	26	136 s	5.23 s
+FOS	DRL DQN	78.38%	29	123 s	2.07 s
+FOS	SPARC	81.08%	30	67 s	1.07 s
+ZJ	Greedy	28.07%	65	1,945 s	60.78 s
+ZJ	DRL DQN	53.51%	61	6,680 s	40.73 s
+ZJ	SPARC	57.02%	65	6,491 s	39.58 s
+BWSN	Greedy	29.68%	38	1,509 s	39.71 s
+BWSN	DRL DQN	59.69%	77	6,580 s	36.97 s
+BWSN	SPARC	60.47%	78	7,723 s	43.39 s","The study uses three principal performance measures:
+1. Detection coverage: Percentage of simulated contamination scenarios successfully detected. It is calculated as the number of detected scenarios divided by the total number of simulated scenarios, multiplied by 100.
+2. Average detection time: Average elapsed time between contamination initiation and the first detection of contamination for the detected scenarios.
+3. Cumulative reward: The cumulative reward received by the DQN agent during training, used to assess learning performance and the effect of hyperparameter tuning.
+The study also examines:
+- Total number of contamination scenarios detected.
+- Total detection time across scenarios.
+- Average detection time per scenario.
+- Epsilon during training.
+- Statistical significance of differences between DRL and SPARC.
+The authors use Shapiro–Wilk tests to assess normality and Levene tests to assess homogeneity of variance. Depending on the assumptions, Welch's t-test or the Mann–Whitney U test is applied. The significance level is set at \(\alpha=0.05\).","Hydraulic simulation software
+EPANET hydraulic modelling software is used to simulate water flow and water-quality behaviour and to model contaminant propagation in the benchmark networks.",Python 3.10.,TensorFlow 2.x is used to develop and train the Deep Q-Network (DQN) models.,"The water distribution network datasets are obtained from the University of Kentucky Water Distribution Systems database:
+
+https://www.uky.edu/WDST/database.html
+
+The four benchmark datasets used are FOS (Fossiron), JILIN, ZJ and BWSN. EPANET is used for hydraulic and water-quality simulation.","The experiments evaluated contamination detection and sensor placement across four benchmark water distribution networks: FOS (Fossiron), JILIN, ZJ and BWSN. For each network, contamination scenarios were generated using an EPANET-based hydraulic and water-quality simulator. Each junction node served as a contamination injection location in exactly one scenario, following a one-scenario-per-node strategy. Detection coverage and detection time were evaluated across all potential contamination sources. The proposed SPARC method (DQN optimised using Grid Search) was compared with the Greedy Algorithm and an untuned DQN model, using a fixed budget of 10 sensors per episode. The experiments also evaluated DQN training and reward convergence under different hyperparameter configurations.","The authors report that each configuration was run 10 times using different random seeds, and mean values were reported.","The initial DQN configuration uses 1,000 training episodes.
+
+Each episode involves placing 10 sensors, with a maximum of 10 placement steps per episode.
+
+The article also presents reward-convergence visualisations for 1,000-episode and 2,000-episode training configurations. Preserve the distinction: the stated initial DQN configuration is 1,000 episodes, while the figures also display a 2,000-episode comparison.","The experiments were conducted using an AMD Ryzen 5 4600H processor with 6 cores and 12 threads, a base clock speed of 3.0 GHz and a turbo frequency of up to 4.0 GHz. The system had 16 GB DDR4 RAM and an NVIDIA GeForce GTX 1650 GPU with 12 GB VRAM, as reported by the authors.
+
+The software environment included Python 3.10, TensorFlow 2.x for developing and training the DQN models, NumPy for numerical operations, Matplotlib for result visualisation, and the EPANET Python Toolkit (EPyT) for simulating water distribution network hydraulics and contamination scenarios."
+7,Sukya 2026,Sensor Placement for Early Contamination Detection in Water Distribution Networks Using Grid Search and Bayesian Optimization,Clinton BLAKK,Fadelis Sukya; Ary Mazharuddin Shiddiqi; Ervin Nurhayati.,Sensor Placement for Early Contamination Detection in Water Distribution Networks Using Grid Search and Bayesian Optimization.,"2026 International Conference on Smart Computing, IoT, and Machine Learning (SIML).",Conference paper,10.1109/SIML69834.2026.11621545,2026,"The research was funded by the Department of Informatics, Institut Teknologi Sepuluh Nopember (ITS), under the 2026 Batch 1 Research Grant.","",Simulation-based computational experiment,"Four benchmark water distribution networks:
+- Jilin (also referred to as JILIN).
+- FOS.
+- ZJ.
+- BWSN.",Simulated benchmark water distribution networks. The authors represent the network topology as a graph consisting of nodes and links (pipes). Hydraulic behaviour and contaminant propagation are simulated using an EPANET-based model.,Water-quality sensors for detecting contaminant events in water distribution networks. The proposed placement approach selects network links (pipes) on which sensors are installed to detect contaminant propagation.,Not applicable (benchmark networks). The geographical locations of the four benchmark networks are not specified in the article.,Jilin: 27 junctions; FOS: 36 junctions; ZJ: 114 junctions; BWSN: 128 junctions.,Jilin: 34 pipes; FOS: 58 pipes; ZJ: 184 pipes; BWSN: 169 pipes.,"The sensor-placement configurations contain 10 selected sensor locations per network. Table III reports ten link locations for each of the four networks under both Grid Search and Bayesian Optimisation.
+
+The algorithm also defines a maximum sensor parameter \(K\), but the article does not provide a separate numerical value for \(K\) in the algorithm description. The ten selected locations in Table III establish the reported final sensor count.","Jilin: 1 reservoir; tank count not reported.
+FOS: 1 reservoir; tank count not reported.
+ZJ: 1 reservoir; tank count not reported.
+BWSN: 1 reservoir and 2 tanks.",Not reported. The network characteristics table does not provide pump or valve counts.,"Jilin: Medium, semi-loop network.
+FOS: Small, semi-loop network.
+ZJ: Large, full-loop network.
+BWSN: Large, full-loop network.","The study investigates Bayesian Optimisation as a sample-efficient hyperparameter-tuning strategy for a Deep Reinforcement Learning-based sensor-placement framework in water distribution networks. Specifically, it applies Bayesian Optimisation to tune a Double Deep Q-Network (Double DQN) used for sequential sensor placement, with the objective of reducing the computational cost of hyperparameter optimisation while maintaining contamination-detection performance comparable to Grid Search. The evaluation focuses on detection coverage, detection time and computational tuning time across four benchmark water distribution networks.","The experiments use four benchmark water distribution networks: Jilin, FOS, ZJ and BWSN. The network topology is represented as a graph comprising nodes and links (pipes). An EPANET-based hydraulic and water-quality simulation model is used to simulate hydraulic behaviour and contaminant propagation.
+
+Contamination scenarios are generated by injecting a hazardous substance at selected network locations and times. Each junction serves as an injection location in one contamination scenario, using a fixed injection pattern. The simulation provides contaminant concentration information used to evaluate whether the selected sensors detect each event within the monitoring horizon.
+
+The sensor-placement problem is formulated as a Markov Decision Process, with a Double DQN agent selecting sensor locations sequentially on network links. Bayesian Optimisation uses a Gaussian Process surrogate model and an acquisition function to identify promising DQN hyperparameter configurations. Grid Search is included as the comparative baseline.
+
+The hyperparameter configurations are evaluated at five training checkpoints: 1,000, 4,000, 7,000, 10,000 and 13,000 episodes. The study compares detection coverage, detection time and hyperparameter-optimisation time across the four benchmark networks.
+
+The article does not report the programming language, specific deep-learning software library, hardware specifications or EPANET version.","The study is a separate publication from Sukya et al. (2026), SPARC: Sensor Placement for Accurate Risk Contaminant Detection in Water Distribution Networks Using Deep Q-Network and Grid Search.
+
+Unlike SPARC, which evaluates Grid Search-based DQN tuning, this paper investigates Bayesian Optimisation as the principal hyperparameter-tuning strategy and uses Grid Search as its baseline.
+
+An important methodological distinction is that the actual sensor-placement implementation operates on network links (pipes), not nodes. Although the article briefly refers to a node-indexed representation in its architectural illustration, it explicitly clarifies that the implemented state and action representations are defined over network links.
+
+The article reports ten sensor locations for each benchmark network under both optimisation methods. The Jilin configurations produce identical sensor locations under Grid Search and Bayesian Optimisation, whereas FOS, ZJ and BWSN produce different configurations.","The study investigates the integration of Bayesian Optimisation with a Double Deep Q-Network (Double DQN) framework for sequential sensor placement in water distribution networks. Sensor placement is formulated as a Markov Decision Process in which the agent selects unsensed network links sequentially.
+
+The principal methodological contribution is the application of Bayesian Optimisation to DQN hyperparameter tuning using a Gaussian Process surrogate model and an acquisition function. This approach is intended to reduce the number of expensive training and simulation evaluations required compared with exhaustive Grid Search.
+
+The framework incorporates a reward function that considers improvements in contamination-detection coverage and detection time. It also introduces a minimum detection-coverage constraint into the hyperparameter-optimisation procedure.
+
+The authors evaluate Bayesian Optimisation against Grid Search across four benchmark networks, comparing the resulting sensor configurations, detection coverage, detection time and computational tuning time. The study focuses on improving the computational efficiency of DQN hyperparameter tuning rather than proposing a new reinforcement learning algorithm.","The results indicate that Bayesian Optimisation reduces DQN hyperparameter-tuning time compared with Grid Search across all four benchmark networks. The reported reductions range from 24.65% to 77.60%.
+
+However, the detection performance obtained through Bayesian Optimisation is not uniformly identical to that of Grid Search.
+
+For Jilin, both methods produce identical sensor configurations, detection coverage of 82.14% and detection time of 113 minutes.
+
+For FOS, both achieve 81.08% coverage, although Grid Search produces a shorter detection time of 62 minutes compared with 67 minutes for Bayesian Optimisation.
+
+For ZJ, Bayesian Optimisation produces lower coverage (56.14%) and a longer detection time (8,087 minutes) than Grid Search (57.02% and 6,491 minutes).
+
+For BWSN, both methods achieve 60.47% coverage, with detection times of 7,723 minutes for Grid Search and 7,722 minutes for Bayesian Optimisation.
+
+Overall, Bayesian Optimisation substantially reduces computational tuning time while producing broadly comparable detection performance, although Grid Search achieves better detection-time performance on FOS and ZJ.","The authors identify the need to extend the investigation beyond the Double DQN framework and evaluate the approach using additional deep reinforcement learning variants. They also identify broader validation across water distribution networks as an area for future research.
+
+The introduction further states that comparisons with alternative DRL algorithms and additional hyperparameter-search strategies are left for future work.
+
+From the perspective of this systematic review, further opportunities include evaluating Bayesian Optimisation on larger and more diverse networks, investigating different sensor budgets, incorporating deployment-cost constraints and assessing robustness under hydraulic and contamination uncertainty. These additional opportunities are reviewer observations rather than explicit recommendations attributed to the authors.","The authors explicitly limit the investigation to a Double-DQN-based sensor-placement framework evaluated on four benchmark water distribution networks. Consequently, the study does not establish whether the computational advantages of Bayesian Optimisation would generalise to other deep reinforcement learning algorithms or a wider range of network configurations.
+
+The authors also leave comparisons with alternative DRL algorithms and additional hyperparameter-optimisation strategies for future work.
+
+From a critical-review perspective, the results show that Bayesian Optimisation does not consistently match Grid Search in detection performance. In particular, the ZJ network exhibits lower detection coverage and a longer detection time under Bayesian Optimisation. The study also does not report independent random-seed repetitions or detailed hardware specifications, limiting the assessment of computational reproducibility. These latter observations are reviewer-identified evidence limitations rather than limitations explicitly acknowledged by the authors.","The study uses four benchmark water distribution networks—Jilin, FOS, ZJ and BWSN—and an EPANET-based hydraulic and water-quality simulation model.
+
+The authors provide important methodological information, including the Double DQN formulation, state and action representations, reward function, Bayesian Optimisation procedure, hyperparameter search ranges, training checkpoints and network characteristics.
+
+The article does not identify a dedicated repository containing the implementation source code, trained models, configuration files or complete experimental outputs. It also does not provide a specific repository URL or DOI for downloading the four network datasets.
+
+Consequently, the methodological description provides useful information for replication, but the availability of the complete implementation and experimental artefacts cannot be confirmed from the publication.","Double Deep Q-Network (Double DQN).
+
+The authors adopt the Double DQN variant to perform sequential sensor placement in water distribution networks. Double DQN is used to mitigate Q-value overestimation by decoupling action selection from action evaluation during target-value computation.
+
+Bayesian Optimisation is applied to tune the Double DQN hyperparameters. It is a hyperparameter-optimisation method, not a separate reinforcement learning algorithm.","The study uses a feedforward neural network to approximate the action-value function \(Q(s,a)\).
+
+The architecture comprises:
+- Input layer: Represents the current sensor-placement configuration as a binary vector over candidate network links.
+- Hidden layers: Two to three fully connected layers, each containing between 64 and 256 neurons, using ReLU activation functions.
+- Output layer: Produces Q-values corresponding to the feasible sensor-placement actions, representing candidate links without sensors.
+The authors use Double DQN to reduce Q-value overestimation and improve training stability by separating action selection and action evaluation during target computation.
+
+The article does not specify the exact number of hidden layers or neurons used in the final experimental implementation; it reports the architectural range of two to three layers and 64–256 neurons per layer.","Sensor placement is formulated as a sequential decision-making problem using a Markov Decision Process.
+
+The network is represented as a graph \(G=(V,E)\), where \(V\) represents nodes and \(E\) represents network links or pipes.
+
+The agent begins with an initial sensor configuration and selects one unsensed network link at each decision step. The selected link is added to the current sensor configuration, and the state is updated.
+
+The process continues until the required sensor-placement limit is reached. The resulting sensor configuration is evaluated using contamination-detection coverage and detection time.
+
+Bayesian Optimisation is subsequently used to identify effective Double DQN hyperparameter configurations, while Grid Search provides the comparative baseline.","The state is represented by a binary vector over the set of network links:
+\[
+x_t\in\{0,1\}^{|E|}
+\]
+where:
+- \(E\) is the set of network links.
+- \(x_e^t=1\) indicates that a sensor has been installed on link \(e\).
+- \(x_e^t=0\) indicates that no sensor has been installed on that link.
+The state therefore records the current sensor-placement configuration.
+
+Important: Although the article's architectural illustration initially presents a node-indexed representation for clarity, the authors explicitly state that the actual implementation uses link-based state and action representations.","The action at each decision step consists of selecting one network link that does not already contain a sensor.
+
+The feasible action set is defined as:
+\[
+A(s_t)=\{e\in E\mid x_e^t=0\}
+\]
+where \(E\) represents the set of candidate network links.
+
+If the network contains \(N\) candidate locations and \(k\) sensors have already been installed, the number of available actions is:
+\[
+|A(s_t)|=N-k
+\]
+Each action adds one sensor to an unoccupied link. Previously selected links cannot be selected again.","The reward function is designed to encourage sensor-placement decisions that improve contamination-detection coverage while reducing detection time.
+
+The step-wise reward is defined as:
+
+\[
+r_t=\alpha\cdot\Delta C_t-\beta\cdot\Delta T_t
+\]
+
+where:
+
+- \(\Delta C_t\) represents the incremental improvement in detection coverage after placing a sensor.
+- \(\Delta T_t\) represents the reduction in detection time achieved after placing a sensor.
+- \(\alpha\) and \(\beta\) are weighting coefficients controlling the relative importance of the two performance measures.
+
+The authors specify:
+
+\[
+\alpha>\beta
+\]
+
+to assign greater priority to detection coverage than to detection time.
+
+Both detection coverage and detection time are normalised before being incorporated into the reward function. The cumulative reward over an episode is calculated as:
+
+\[
+R=\sum_{t=1}^{T}r_t
+\]
+
+The cumulative reward reflects the overall performance of the learned sensor-placement policy in balancing contamination-detection coverage and detection time.
+
+**Methodological observation:** The article defines \(\Delta T_t\) as the reduction in detection time but subtracts it in the published reward equation. This creates a potential sign ambiguity in the formulation. The equation and the authors' definition have therefore been retained exactly as reported, without attempting to resolve or modify the sign.","The principal sensor-placement objectives are to maximise contamination-detection coverage and minimise contamination-detection time. The reinforcement learning agent seeks to learn a sensor-placement policy that balances these objectives through its cumulative reward.
+
+In the Bayesian Optimisation procedure, the objective is to maximise the expected cumulative reward obtained by training and evaluating the Double DQN with a given hyperparameter configuration:
+
+\(f(\theta)=E[R(\theta)]\)
+
+subject to the minimum detection-coverage constraint:
+
+\(C(\theta)\geq C_{\min}\)
+
+where \(C_{\min}\) represents the minimum acceptable detection coverage, with 70% provided as an example. Configurations that fail to satisfy the coverage constraint are treated as infeasible.
+
+The study also seeks to reduce the computational time required for hyperparameter optimisation by using Bayesian Optimisation instead of exhaustive Grid Search.","The principal comparator is Grid Search (GS).
+
+Grid Search is used as the baseline hyperparameter-optimisation method against which Bayesian Optimisation is evaluated.
+
+Both methods tune the Double DQN-based sensor-placement framework. The comparison focuses on:
+- Detection coverage.
+- Detection time.
+- Resulting sensor configurations.
+- Hyperparameter-optimisation time.
+The paper does not conduct a direct experimental comparison with Genetic Algorithm, Particle Swarm Optimisation or Greedy sensor-placement algorithms.","The study uses Bayesian Optimisation (BO) as its principal hyperparameter-optimisation strategy and Grid Search as the baseline.
+
+Bayesian Optimisation employs a Gaussian Process (GP) surrogate model to approximate the relationship between DQN hyperparameter configurations and their resulting performance.
+
+An acquisition function is used to select promising new hyperparameter configurations by balancing exploration and exploitation.
+
+The search space reported in Table II includes:
+Hyperparameter	Search range
+Learning rate	(0.0001, 0.01)
+Discount factor (\(\gamma\))	(0.95, 0.99)
+Batch size	[32, 128]
+Replay memory size	[2,000, 10,000]
+Epsilon decay	(0.97, 0.999)
+Gradient clipping	(0, 5.0)
+
+
+The optimisation procedure evaluates candidate configurations using cumulative reward, detection coverage and detection time.","The Double DQN agent is trained through repeated interaction with the EPANET-based simulated water distribution network environment.
+
+The agent receives the current binary sensor-placement state and selects an unoccupied network link. The resulting sensor configuration is evaluated using contamination-detection coverage and detection time, and the agent receives a reward based on the changes in these measures.
+
+The agent learns a sensor-placement policy through repeated episodes using the Double DQN action-value function. The Double DQN architecture separates action selection and action evaluation during target-value computation to mitigate Q-value overestimation.
+
+Bayesian Optimisation is applied to tune the DQN hyperparameters. It begins with an initial design of candidate configurations and subsequently uses a Gaussian Process surrogate model and acquisition function to select additional configurations.
+
+Each candidate configuration is trained and evaluated at five predefined training checkpoints:
+- 1,000 episodes.
+- 4,000 episodes.
+- 7,000 episodes.
+- 10,000 episodes.
+- 13,000 episodes.
+The performance of each configuration is assessed using cumulative reward, detection coverage and detection time. Configurations that fail to satisfy the minimum coverage constraint are treated as infeasible in the optimisation procedure.
+
+Grid Search is conducted as the baseline tuning strategy. The selected configurations are then used to obtain the final sensor-placement solutions for the four benchmark networks.","The study imposes the following constraints:
+1. Candidate-location constraint: Sensors are placed on network links (pipes), not on arbitrary locations outside the network.
+2. Non-duplicate placement: Only links without existing sensors are available for selection.
+3. Sensor-budget constraint: The optimisation algorithm defines a maximum sensor parameter \(K\). The reported final configurations contain ten selected sensor locations per network.
+4. Coverage constraint: The Bayesian Optimisation procedure imposes a minimum detection-coverage threshold \(C_{\min}\), with 70% provided as an example.","Detection coverage measures the percentage of simulated contamination scenarios detected by at least one selected sensor within the predefined monitoring horizon.
+
+It is defined as:
+\[
+Coverage(\%)=
+\frac{N_{\text{detected}}}{N_{\text{total}}}\times100
+\]
+where:
+- \(N_{\text{detected}}\) is the number of detected contamination events.
+- \(N_{\text{total}}\) is the total number of simulated contamination events.
+The results are reported separately for Grid Search and Bayesian Optimisation across all four benchmark networks.","The study does not report conventional classification accuracy, precision, recall, F1-score or false-positive rate.
+
+Instead, contamination-detection effectiveness is evaluated through detection coverage, which represents the proportion of simulated contamination scenarios detected by at least one selected sensor within the monitoring horizon.","Detection time measures the elapsed time between the initiation of a contamination event and its first detection by at least one selected sensor.
+
+The average detection time is calculated over all detected contamination events:
+\[
+Detection\ Time=
+\frac{1}{N_{\text{detected}}}
+\sum_{i=1}^{N_{\text{detected}}}t_i
+\]
+where \(t_i\) represents the detection time for event \(i\).
+
+The results are reported in minutes.",Not reported. The study does not provide a numerical sensor deployment cost or an economic comparison of the selected sensor configurations.,"The reported Grid Search and Bayesian Optimisation configurations each contain 10 sensor locations per benchmark network.
+
+The selected sensor locations are listed in Table III.","Computational performance is evaluated primarily through the time required for hyperparameter optimisation.
+
+The authors compare the total optimisation time required by Grid Search and Bayesian Optimisation for each benchmark network.
+
+The reported results are:
+Network	Grid Search (min)	Bayesian Optimisation (min)	Reported reduction
+Jilin	279.24	210.40	24.65%
+FOS	976.03	218.59	77.60%
+ZJ	1,510.21	692.42	54.15%
+BWSN	1,510.21	800.48	47.00%
+
+
+The authors report that Bayesian Optimisation reduces hyperparameter-tuning time across all four networks.
+
+The article does not provide detailed CPU, GPU, memory or hardware-utilisation measurements.","Bayesian Optimisation is compared with Grid Search in terms of sensor-placement performance and computational tuning time.
+
+For Jilin, both methods produce identical sensor locations, detection coverage of 82.14% and detection time of 113 minutes.
+
+For FOS, both methods achieve 81.08% coverage. However, Grid Search produces a shorter detection time of 62 minutes, compared with 67 minutes for Bayesian Optimisation.
+
+For ZJ, Grid Search achieves 57.02% coverage and 6,491 minutes detection time, while Bayesian Optimisation achieves 56.14% coverage and 8,087 minutes.
+
+For BWSN, both methods achieve 60.47% coverage. Their detection times are very similar: 7,723 minutes for Grid Search and 7,722 minutes for Bayesian Optimisation.
+
+Despite these differences in detection performance, Bayesian Optimisation reduces hyperparameter-tuning time across all four networks, with reported reductions between 24.65% and 77.60%.
+
+The findings indicate that Bayesian Optimisation offers computational advantages but does not consistently match or outperform Grid Search in every detection-performance measure.","The principal results are reported in Tables IV and V.
+
+Table IV: Detection coverage and detection time
+Network	Grid Search coverage	BO coverage	Grid Search detection time (min)	BO detection time (min)
+Jilin	82.14%	82.14%	113	113
+FOS	81.08%	81.08%	62	67
+ZJ	57.02%	56.14%	6,491	8,087
+BWSN	60.47%	60.47%	7,723	7,722
+
+
+Table V: Hyperparameter-optimisation time
+Network	Grid Search (min)	BO (min)	Time saving (min)	Reduction
+Jilin	279.24	210.40	68.85	24.65%
+FOS	976.03	218.59	757.45	77.60%
+ZJ	1,510.21	692.42	817.78	54.15%
+BWSN	1,510.21	800.48	709.73	47.00%
+
+
+The paper also reports that the Jilin sensor configurations are identical under both methods, while the FOS, ZJ and BWSN configurations differ.","The study uses three principal evaluation metrics:
+1. Detection coverage: Percentage of simulated contamination scenarios detected by at least one sensor within the monitoring horizon. Calculated as detected events divided by total simulated events, multiplied by 100.
+2. Detection time: Average elapsed time between contamination initiation and the first detection by a selected sensor, calculated over detected events and reported in minutes.
+3. Cumulative reward: Total reward accumulated by the Double DQN agent over an episode, representing the combined contribution of detection coverage and detection-time improvement.
+The study additionally evaluates:
+- Hyperparameter-optimisation time, measured in minutes.
+- Sensor-placement configurations, represented by the selected network-link identifiers.
+- Minimum coverage feasibility during Bayesian Optimisation.
+- Training progression at five predefined episode checkpoints.
+The authors use these measures to compare the computational efficiency and detection performance of Bayesian Optimisation and Grid Search.",EPANET-based hydraulic and water-quality simulation.,Not reported.,Not reported. The article describes a Double DQN implementation but does not identify a specific deep-learning framework or reinforcement learning library.,"The study uses four benchmark water distribution networks:
+- Jilin.
+- FOS.
+- ZJ.
+- BWSN.
+The article does not identify a specific repository, database URL or DOI for the network input files. EPANET is used to simulate hydraulic and water-quality behaviour.","The experiments investigate contamination-event detection through sensor placement in four benchmark water distribution networks: Jilin, FOS, ZJ and BWSN.
+
+Contamination scenarios are generated by injecting a hazardous substance at selected network locations and times. The study adopts a one-scenario-per-junction approach, whereby each junction serves as an injection location in one scenario under a fixed injection pattern.
+
+The Double DQN-based sensor-placement framework is evaluated using two hyperparameter-tuning strategies:
+1. Bayesian Optimisation.
+2. Grid Search.
+Both methods are used to obtain sensor-placement configurations, which are compared using detection coverage, detection time and computational tuning time.",Not reported. The article does not specify the number of independent experimental repetitions or the random seed values used.,"The article evaluates hyperparameter configurations at five predefined training checkpoints:
+- 1,000 episodes.
+- 4,000 episodes.
+- 7,000 episodes.
+- 10,000 episodes.
+- 13,000 episodes.
+These are reported as evaluation checkpoints during the hyperparameter-optimisation procedure. The article does not clearly establish a single final training-episode count applicable to every configuration.","Not reported. The article does not identify the CPU, GPU, RAM, operating system or specific computational platform used for the experiments."
+7,Sukya 2026,Sensor Placement for Early Contamination Detection in Water Distribution Networks Using Grid Search and Bayesian Optimization,Consensus,Fadelis Sukya; Ary Mazharuddin Shiddiqi; Ervin Nurhayati.,Sensor Placement for Early Contamination Detection in Water Distribution Networks Using Grid Search and Bayesian Optimization.,"2026 International Conference on Smart Computing, IoT, and Machine Learning (SIML).",Conference paper,10.1109/SIML69834.2026.11621545,2026,"The research was funded by the Department of Informatics, Institut Teknologi Sepuluh Nopember (ITS), under the 2026 Batch 1 Research Grant.",Not reported. No explicit conflict-of-interest declaration was identified in the article.,Simulation-based computational experiment,"Four benchmark water distribution networks:
+- Jilin (also referred to as JILIN).
+- FOS.
+- ZJ.
+- BWSN.",Simulated benchmark water distribution networks. The authors represent the network topology as a graph consisting of nodes and links (pipes). Hydraulic behaviour and contaminant propagation are simulated using an EPANET-based model.,Water-quality sensors for detecting contaminant events in water distribution networks. The proposed placement approach selects network links (pipes) on which sensors are installed to detect contaminant propagation.,Not applicable (benchmark networks). The geographical locations of the four benchmark networks are not specified in the article.,Jilin: 27 junctions; FOS: 36 junctions; ZJ: 114 junctions; BWSN: 128 junctions.,Jilin: 34 pipes; FOS: 58 pipes; ZJ: 184 pipes; BWSN: 169 pipes.,"The sensor-placement configurations contain 10 selected sensor locations per network. Table III reports ten link locations for each of the four networks under both Grid Search and Bayesian Optimisation.
+
+The algorithm also defines a maximum sensor parameter \(K\), but the article does not provide a separate numerical value for \(K\) in the algorithm description. The ten selected locations in Table III establish the reported final sensor count.","Jilin — 1 reservoir, 0 tanks; FOS — 1 reservoir, 0 tanks; ZJ — 1 reservoir, 0 tanks; BWSN — 1 reservoir, 2 tanks.",Not reported. The network characteristics table does not provide pump or valve counts.,"Jilin: Medium, semi-loop network.
+FOS: Small, semi-loop network.
+ZJ: Large, full-loop network.
+BWSN: Large, full-loop network.","The study investigates Bayesian Optimisation as a sample-efficient hyperparameter-tuning strategy for a Deep Reinforcement Learning-based sensor-placement framework in water distribution networks. Specifically, it applies Bayesian Optimisation to tune a Double Deep Q-Network (Double DQN) used for sequential sensor placement, with the objective of reducing the computational cost of hyperparameter optimisation while maintaining contamination-detection performance comparable to Grid Search. The evaluation focuses on detection coverage, detection time and computational tuning time across four benchmark water distribution networks.","The experiments use four benchmark water distribution networks: Jilin, FOS, ZJ and BWSN. The network topology is represented as a graph comprising nodes and links (pipes). An EPANET-based hydraulic and water-quality simulation model is used to simulate hydraulic behaviour and contaminant propagation.
+
+Contamination scenarios involve injections of a hazardous substance at selected locations and times within each network. The resulting contaminant concentration is simulated using EPANET. The Double DQN framework performs sequential sensor placement on network links, while Bayesian Optimisation and Grid Search are used as alternative hyperparameter-tuning strategies.
+
+The evaluation considers detection coverage, average detection time and computational hyperparameter-optimisation time across the four benchmark networks.","The study is a separate publication from Sukya et al. (2026), SPARC: Sensor Placement for Accurate Risk Contaminant Detection in Water Distribution Networks Using Deep Q-Network and Grid Search.
+
+Unlike SPARC, which evaluates Grid Search-based DQN tuning, this paper investigates Bayesian Optimisation as the principal hyperparameter-tuning strategy and uses Grid Search as its baseline.
+
+An important methodological distinction is that the actual sensor-placement implementation operates on network links (pipes), not nodes. Although the article briefly refers to a node-indexed representation in its architectural illustration, it explicitly clarifies that the implemented state and action representations are defined over network links.
+
+The article reports ten sensor locations for each benchmark network under both optimisation methods. The Jilin configurations produce identical sensor locations under Grid Search and Bayesian Optimisation, whereas FOS, ZJ and BWSN produce different configurations.","The study investigates the integration of Bayesian Optimisation with a Double Deep Q-Network (Double DQN) framework for sequential sensor placement in water distribution networks. Sensor placement is formulated as a Markov Decision Process in which the agent selects unsensed network links sequentially.
+
+The principal methodological contribution is the application of Bayesian Optimisation to DQN hyperparameter tuning using a Gaussian Process surrogate model and an acquisition function. This approach is intended to reduce the number of expensive training and simulation evaluations required compared with exhaustive Grid Search.
+
+The framework incorporates a reward function that considers improvements in contamination-detection coverage and detection time. It also introduces a minimum detection-coverage constraint into the hyperparameter-optimisation procedure.
+
+The authors evaluate Bayesian Optimisation against Grid Search across four benchmark networks, comparing the resulting sensor configurations, detection coverage, detection time and computational tuning time. The study focuses on improving the computational efficiency of DQN hyperparameter tuning rather than proposing a new reinforcement learning algorithm.","The results indicate that Bayesian Optimisation reduces DQN hyperparameter-tuning time compared with Grid Search across all four benchmark networks. The reported reductions range from 24.65% to 77.60%.
+
+However, the detection performance obtained through Bayesian Optimisation is not uniformly identical to that of Grid Search.
+
+For Jilin, both methods produce identical sensor configurations, detection coverage of 82.14% and detection time of 113 minutes.
+
+For FOS, both achieve 81.08% coverage, although Grid Search produces a shorter detection time of 62 minutes compared with 67 minutes for Bayesian Optimisation.
+
+For ZJ, Bayesian Optimisation produces lower coverage (56.14%) and a longer detection time (8,087 minutes) than Grid Search (57.02% and 6,491 minutes).
+
+For BWSN, both methods achieve 60.47% coverage, with detection times of 7,723 minutes for Grid Search and 7,722 minutes for Bayesian Optimisation.
+
+Overall, Bayesian Optimisation substantially reduces computational tuning time while producing broadly comparable detection performance, although Grid Search achieves better detection-time performance on FOS and ZJ.","The authors identify the need to extend the investigation beyond the Double DQN framework and evaluate the approach using additional deep reinforcement learning variants. They also identify broader validation across water distribution networks as an area for future research.
+
+The introduction further states that comparisons with alternative DRL algorithms and additional hyperparameter-search strategies are left for future work.
+
+From the perspective of this systematic review, further opportunities include evaluating Bayesian Optimisation on larger and more diverse networks, investigating different sensor budgets, incorporating deployment-cost constraints and assessing robustness under hydraulic and contamination uncertainty. These additional opportunities are reviewer observations rather than explicit recommendations attributed to the authors.","The authors explicitly limit the investigation to a Double-DQN-based sensor-placement framework evaluated on four benchmark water distribution networks. Consequently, the study does not establish whether the computational advantages of Bayesian Optimisation would generalise to other deep reinforcement learning algorithms or a wider range of network configurations.
+
+The authors also leave comparisons with alternative DRL algorithms and additional hyperparameter-optimisation strategies for future work.
+
+From a critical-review perspective, the results show that Bayesian Optimisation does not consistently match Grid Search in detection performance. In particular, the ZJ network exhibits lower detection coverage and a longer detection time under Bayesian Optimisation. The study also does not report independent random-seed repetitions or detailed hardware specifications, limiting the assessment of computational reproducibility. These latter observations are reviewer-identified evidence limitations rather than limitations explicitly acknowledged by the authors.","The study uses four benchmark water distribution networks—Jilin, FOS, ZJ and BWSN—and an EPANET-based hydraulic and water-quality simulation model.
+
+The authors provide important methodological information, including the Double DQN formulation, state and action representations, reward function, Bayesian Optimisation procedure, hyperparameter search ranges, training checkpoints and network characteristics.
+
+The article does not identify a dedicated repository containing the implementation source code, trained models, configuration files or complete experimental outputs. It also does not provide a specific repository URL or DOI for downloading the four network datasets.
+
+Consequently, the methodological description provides useful information for replication, but the availability of the complete implementation and experimental artefacts cannot be confirmed from the publication.","Double Deep Q-Network (Double DQN).
+
+The authors employ Double DQN for sequential sensor placement in water distribution networks. The algorithm mitigates Q-value overestimation by decoupling action selection from action evaluation during target-value computation.
+
+Bayesian Optimisation is used to tune the Double DQN hyperparameters. It is a hyperparameter-optimisation technique, not a separate reinforcement learning algorithm.","The study uses a feedforward neural network to approximate the action-value function \(Q(s,a)\).
+
+The architecture comprises:
+
+- **Input layer:** Represents the current sensor-placement configuration as a binary vector over candidate network links.
+- **Hidden layers:** Two to three fully connected layers, each containing between 64 and 256 neurons, with ReLU activation functions to capture nonlinear relationships between sensor configurations and contamination-detection performance.
+- **Output layer:** Produces Q-values corresponding to feasible sensor-placement actions, representing candidate network links that do not yet contain sensors.
+
+The authors adopt the Double Deep Q-Network (Double DQN) variant to mitigate Q-value overestimation and improve training stability. This is achieved by decoupling action selection and action evaluation during target-value computation.
+
+The article does not specify the exact number of hidden layers or neurons used in the final experimental implementation. It reports an architectural range of two to three fully connected layers, with 64–256 neurons per layer.","Sensor placement is formulated as a sequential decision-making problem using a Markov Decision Process (MDP).
+
+The water distribution network is represented as a graph \(G=(V,E)\), where \(V\) denotes network nodes and \(E\) denotes network links or pipes. Sensor locations are selected from the network links rather than the junction nodes.
+
+The agent begins with an initial sensor configuration and selects one unsensed network link at each decision step. The selected link is added to the existing sensor configuration, and the state is updated to reflect the new placement. Previously selected links are excluded from subsequent actions.
+
+This process continues until the required sensor-placement limit is reached. The resulting sensor configuration is evaluated using contamination-detection coverage and detection time.
+
+Bayesian Optimisation is subsequently applied to identify effective Double DQN hyperparameter configurations, while Grid Search serves as the comparative hyperparameter-tuning baseline.","The state is represented by a binary vector over the set of network links:
+
+\[
+x_t\in\{0,1\}^{|E|}
+\]
+
+where:
+
+- \(E\) represents the set of network links (pipes).
+- \(x_e^t=1\) indicates that a sensor has been installed on link \(e\).
+- \(x_e^t=0\) indicates that no sensor has been installed on link \(e\).
+
+The state therefore represents the current sensor-placement configuration at each decision step.
+
+**Important methodological clarification:** Although the architectural illustration initially presents a node-indexed binary representation for clarity, the authors explicitly state that the actual implementation uses link-based state and action representations. Sensor locations are therefore selected from network links rather than junction nodes.","At each decision step, the action consists of selecting one network link that does not already contain a sensor.
+
+The feasible action set is defined as:
+
+\[
+A(s_t)=\{e\in E\mid x_e^t=0\}
+\]
+
+where:
+- \(E\) represents the set of candidate network links.
+- \(x_e^t=0\) indicates that link \(e\) does not currently contain a sensor.
+
+If the network contains \(N\) candidate sensor locations and \(k\) sensors have already been deployed, the number of available actions is:
+
+\[
+|A(s_t)|=N-k
+\]
+
+Each action adds one sensor to an unoccupied network link. Previously selected links are excluded from subsequent action choices.","The reward function is designed to encourage sensor-placement decisions that improve contamination-detection coverage while reducing detection time.
+
+The step-wise reward is defined as:
+\[
+r_t=\alpha\cdot\Delta C_t-\beta\cdot\Delta T_t
+\]
+where:
+- \(\Delta C_t\) represents the incremental improvement in detection coverage after placing a sensor.
+- \(\Delta T_t\) represents the reduction in detection time achieved after placing a sensor.
+- \(\alpha\) and \(\beta\) are weighting coefficients controlling the relative importance of the two performance measures.
+The authors specify:
+\[
+\alpha>\beta
+\]
+to assign greater priority to detection coverage than to detection time.
+
+Both detection coverage and detection time are normalised before being incorporated into the reward function. Detection coverage is expressed between 0 and 1, while detection time is normalised with respect to the maximum observation horizon.
+
+The cumulative reward over an episode is calculated as:
+\[
+R=\sum_{t=1}^{T}r_t
+\]
+The cumulative reward reflects the overall performance of the learned sensor-placement policy in balancing contamination-detection coverage and detection time.
+
+Methodological observation: The article defines \(\Delta T_t\) as the reduction in detection time but subtracts it in the published reward equation. This creates a potential sign ambiguity in the formulation. The paper does not explain this sign convention further; therefore, the reported equation and the authors' definition are retained without modification.","The principal sensor-placement objectives are:
+
+1. Maximise contamination-detection coverage.
+2. Minimise contamination-detection time.
+
+The Double DQN agent learns a sequential sensor-placement policy that balances these objectives through its cumulative reward function.
+
+For Bayesian Optimisation, the objective is to maximise the expected cumulative reward obtained by training and evaluating the Double DQN under a given hyperparameter configuration:
+
+\[
+f(\theta)=E[R(\theta)]
+\]
+
+subject to the minimum detection-coverage constraint:
+
+\[
+C(\theta)\geq C_{\min}
+\]
+
+where \(C_{\min}\) represents the minimum acceptable detection coverage. The authors provide 70% as an example of this threshold. Hyperparameter configurations that fail to satisfy the coverage constraint are treated as infeasible.
+
+At the computational level, the study also aims to reduce hyperparameter-optimisation time by applying Bayesian Optimisation as a more computationally efficient alternative to Grid Search.","The principal comparator is Grid Search (GS).
+
+Grid Search is used as the baseline hyperparameter-optimisation method against which Bayesian Optimisation (BO) is evaluated. Both methods tune the Double DQN-based sensor-placement framework.
+
+The comparison focuses on:
+- Contamination-detection coverage.
+- Average contamination-detection time.
+- Resulting sensor-placement configurations.
+- Hyperparameter-optimisation computational time.
+
+The study does not conduct a direct experimental comparison of sensor-placement algorithms against Genetic Algorithm (GA), Particle Swarm Optimisation (PSO), or Greedy sensor-placement methods. Grid Search serves specifically as a hyperparameter-tuning comparator, not an alternative sensor-placement algorithm.","The study uses Bayesian Optimisation (BO) as its principal hyperparameter-optimisation strategy and Grid Search (GS) as the comparative baseline.
+
+Bayesian Optimisation employs a Gaussian Process (GP) surrogate model to approximate the relationship between DQN hyperparameter configurations and their resulting performance. An acquisition function is used to select promising configurations by balancing exploration and exploitation.
+
+The hyperparameter search space reported in Table II comprises:
+
+| Hyperparameter | Search range |
+|---|---|
+| Learning rate | (0.0001, 0.01) |
+| Discount factor (\(\gamma\)) | (0.95, 0.99) |
+| Batch size | [32, 128] |
+| Replay memory size | [2,000, 10,000] |
+| Epsilon decay | (0.97, 0.999) |
+| Gradient clipping | (0, 5.0) |
+
+Candidate configurations are evaluated using the expected cumulative reward obtained from Double DQN training and evaluation. Detection coverage and detection time are incorporated into the performance evaluation, with a minimum detection-coverage constraint imposed during optimisation.
+
+Five predefined training checkpoints are used to assess learning progression:
+
+- 1,000 episodes.
+- 4,000 episodes.
+- 7,000 episodes.
+- 10,000 episodes.
+- 13,000 episodes.
+
+The Bayesian Optimisation procedure also applies a minimum detection-coverage constraint, with 70% provided by the authors as an example threshold. Configurations that fail to satisfy this constraint are treated as infeasible.
+
+Grid Search serves as the comparative baseline for evaluating hyperparameter-tuning efficiency and the resulting sensor-placement performance.
+
+**Reporting limitation:** Although the search ranges are reported, the article does not clearly provide a complete final set of optimal hyperparameter values selected for each benchmark network.","The study trains a Double Deep Q-Network (Double DQN) agent through repeated interaction with an EPANET-based simulated water distribution network environment.
+
+The training process follows a sequential decision-making approach:
+
+1. **State observation:** The agent receives the current sensor-placement configuration, represented by a binary vector over the network links.
+2. **Action selection:** At each decision step, the agent selects an unoccupied network link on which to place a sensor.
+3. **Environment evaluation:** The resulting sensor configuration is evaluated using contamination-detection coverage and detection time.
+4. **Reward calculation:** The agent receives a step-wise reward based on improvements in detection coverage and detection time, using the reward function reported by the authors.
+5. **Policy learning:** Through repeated episodes, the agent learns a sensor-placement policy that seeks to maximise cumulative reward.
+
+The Double DQN variant separates action selection and action evaluation during target-value computation to mitigate Q-value overestimation and improve training stability.
+
+**Training and hyperparameter optimisation:** Bayesian Optimisation is used to identify suitable DQN hyperparameter configurations. It employs an initial design, followed by a Gaussian Process surrogate model and an acquisition function to select subsequent configurations. Each candidate configuration is trained and evaluated at five predefined checkpoints: 1,000, 4,000, 7,000, 10,000 and 13,000 episodes. The evaluation examines cumulative reward, detection coverage and detection time.
+
+Grid Search is used as the baseline hyperparameter-tuning strategy.
+
+**Reporting limitations:** The paper does not provide a clearly specified final training-episode count applicable to every configuration. It also does not report the detailed exploration schedule, replay-buffer update procedure, target-network update frequency, convergence criterion or exact training stopping conditions.","The study imposes the following constraints:
+
+1. **Candidate-location constraint:** Sensors are placed on eligible network links (pipes), rather than at arbitrary locations outside the network.
+
+2. **Non-duplicate placement constraint:** Only links without an existing sensor are available for selection. Previously selected links are excluded from subsequent placement actions.
+
+3. **Sensor-budget constraint:** The optimisation algorithm defines a maximum sensor parameter \(K\). The reported final configurations contain ten selected sensor locations per network.
+
+4. **Minimum detection-coverage constraint:** The Bayesian Optimisation procedure incorporates a minimum detection-coverage threshold, \(C_{\min}\), with 70% provided as an example. Configurations that fail to satisfy the specified threshold are treated as infeasible.","Detection coverage measures the percentage of simulated contamination scenarios detected by at least one selected sensor within the predefined monitoring horizon.
+
+It is defined as:
+\[
+Coverage(\%)=
+\frac{N_{\text{detected}}}{N_{\text{total}}}\times100
+\]
+where:
+- \(N_{\text{detected}}\) is the number of detected contamination events.
+- \(N_{\text{total}}\) is the total number of simulated contamination events.
+The results are reported separately for Grid Search and Bayesian Optimisation across all four benchmark networks.","The study does not report conventional classification accuracy, precision, recall, F1-score or false-positive rate.
+
+Instead, contamination-detection effectiveness is evaluated through detection coverage, which represents the proportion of simulated contamination scenarios detected by at least one selected sensor within the monitoring horizon.","Detection time measures the elapsed time between the initiation of a contamination event and its first detection by at least one selected sensor.
+
+The average detection time is calculated over all detected contamination events:
+\[
+Detection\ Time=
+\frac{1}{N_{\text{detected}}}
+\sum_{i=1}^{N_{\text{detected}}}t_i
+\]
+where \(t_i\) represents the detection time for event \(i\).
+
+The results are reported in minutes.",Not reported. The study does not provide a numerical sensor deployment cost or an economic comparison of the selected sensor configurations.,"The reported Grid Search and Bayesian Optimisation configurations each contain 10 sensor locations per benchmark network.
+
+The selected sensor locations are listed in Table III.","Computational performance is evaluated primarily through the time required for hyperparameter optimisation. The authors compare the computational time required by Grid Search (GS) and Bayesian Optimisation (BO) across the four benchmark networks.
+
+The reported results are:
+
+| Network | Grid Search (min) | Bayesian Optimisation (min) | Author-reported reduction |
+|---|---:|---:|---:|
+| Jilin | 279.24 | 210.40 | 24.65% |
+| FOS | 976.03 | 218.59 | 77.60% |
+| ZJ | 1,510.21 | 692.42 | 54.15% |
+| BWSN | 1,510.21 | 800.48 | 47.00% |
+
+The authors report that Bayesian Optimisation reduces hyperparameter-tuning time across all four benchmark networks, with reported reductions ranging from 24.65% to 77.60%.
+
+The article does not provide detailed CPU, GPU, memory-utilisation, or hardware-performance measurements. Consequently, the reported computational advantage is limited to hyperparameter-optimisation time and should not be interpreted as a comprehensive comparison of computational resource consumption.","Bayesian Optimisation (BO) is compared with Grid Search (GS) in terms of sensor-placement performance and computational hyperparameter-tuning time.
+
+For Jilin, both methods produce identical sensor locations, detection coverage of 82.14%, and detection time of 113 minutes.
+
+For FOS, both methods achieve 81.08% coverage. However, Grid Search produces a shorter detection time of 62 minutes, compared with 67 minutes for Bayesian Optimisation.
+
+For ZJ, Grid Search achieves 57.02% coverage and a detection time of 6,491 minutes, while Bayesian Optimisation achieves 56.14% coverage and a detection time of 8,087 minutes.
+
+For BWSN, both methods achieve 60.47% coverage. Their detection times are nearly identical: 7,723 minutes for Grid Search and 7,722 minutes for Bayesian Optimisation.
+
+Despite these differences in detection performance, Bayesian Optimisation reduces hyperparameter-tuning time across all four networks, with reported reductions ranging from 24.65% to 77.60%.
+
+Overall, Bayesian Optimisation offers computational advantages in hyperparameter tuning but does not consistently match or outperform Grid Search across all sensor-placement performance measures. Its principal demonstrated advantage is reduced tuning time rather than consistently improved contamination-detection performance.","The principal quantitative results are reported in Tables IV and V.
+
+**Table IV: Detection coverage and detection time**
+
+| Network | Grid Search coverage | BO coverage | Grid Search detection time (min) | BO detection time (min) |
+|---|---:|---:|---:|---:|
+| Jilin | 82.14% | 82.14% | 113 | 113 |
+| FOS | 81.08% | 81.08% | 62 | 67 |
+| ZJ | 57.02% | 56.14% | 6,491 | 8,087 |
+| BWSN | 60.47% | 60.47% | 7,723 | 7,722 |
+
+**Table V: Hyperparameter-optimisation time**
+
+| Network | Grid Search (min) | BO (min) | Reported time saving (min) | Reported reduction |
+|---|---:|---:|---:|---:|
+| Jilin | 279.24 | 210.40 | 68.85 | 24.65% |
+| FOS | 976.03 | 218.59 | 757.45 | 77.60% |
+| ZJ | 1,510.21 | 692.42 | 817.78 | 54.15% |
+| BWSN | 1,510.21 | 800.48 | 709.73 | 47.00% |
+
+The authors report that the Jilin sensor configurations are identical under both optimisation methods, whereas the FOS, ZJ and BWSN configurations differ.
+
+Overall, Bayesian Optimisation consistently reduced hyperparameter-optimisation time across all four benchmark networks. However, improvements in detection performance were not consistent across the networks. Jilin produced identical detection results, FOS showed a slightly longer detection time with BO, and ZJ showed lower coverage and longer detection time with BO. BWSN produced nearly identical detection performance under both methods.
+
+The findings therefore indicate that Bayesian Optimisation primarily improved hyperparameter-tuning computational efficiency rather than consistently improving sensor-placement detection performance.","The study uses three principal evaluation metrics:
+
+1. **Detection coverage:** Percentage of simulated contamination scenarios detected by at least one selected sensor within the monitoring horizon. It is calculated as the number of detected contamination events divided by the total number of simulated events, multiplied by 100.
+
+2. **Detection time:** Average elapsed time between contamination initiation and its first detection by a selected sensor. It is calculated over detected events and reported in minutes.
+
+3. **Cumulative reward:** Total reward accumulated by the Double DQN agent over an episode, representing the combined contribution of detection coverage and detection-time improvement.
+
+The study additionally evaluates:
+
+- **Hyperparameter-optimisation time:** Computational time required by Bayesian Optimisation and Grid Search, measured in minutes.
+- **Sensor-placement configurations:** Resulting sensor locations, represented by selected network-link identifiers.
+- **Minimum coverage feasibility:** Whether candidate hyperparameter configurations satisfy the minimum detection-coverage constraint during Bayesian Optimisation.
+- **Training progression:** Agent performance assessed at five predefined episode checkpoints (1,000, 4,000, 7,000, 10,000 and 13,000 episodes).
+
+Detection coverage and detection time are the principal sensor-placement performance outcomes, while cumulative reward reflects the Double DQN learning objective. Hyperparameter-optimisation time provides an additional measure of computational efficiency.
+
+The authors use these measures to compare the computational efficiency and detection performance of Bayesian Optimisation and Grid Search.",EPANET-based hydraulic and water-quality simulation.,Not reported.,Not reported. The article describes a Double DQN implementation but does not identify a specific deep-learning framework or reinforcement learning library.,"The study uses four benchmark water distribution networks:
+- Jilin.
+- FOS.
+- ZJ.
+- BWSN.
+The article does not identify a specific repository, database URL or DOI for the network input files. EPANET is used to simulate hydraulic and water-quality behaviour.","The experiments investigate contamination-event detection through sensor placement in four benchmark water distribution networks: Jilin, FOS, ZJ and BWSN. Contamination scenarios are modelled as injections of a hazardous substance at selected locations and times within each network. EPANET is used to simulate the temporal evolution of contaminant concentration. The Double DQN-based sensor-placement framework is evaluated using two hyperparameter-tuning strategies: Bayesian Optimisation and Grid Search. The resulting configurations are compared using detection coverage, average detection time and computational hyperparameter-optimisation time.",Not reported. The article does not specify the number of independent experimental repetitions or the random seed values used.,"The article evaluates hyperparameter configurations at five predefined training checkpoints:
+
+- 1,000 episodes.
+- 4,000 episodes.
+- 7,000 episodes.
+- 10,000 episodes.
+- 13,000 episodes.
+
+These values represent evaluation checkpoints used during the hyperparameter-optimisation procedure. The article does not clearly establish a single final training-episode count applicable to every hyperparameter configuration. Therefore, the checkpoints should not be interpreted as evidence that all configurations were necessarily trained for 13,000 episodes.","Not reported. The article does not identify the CPU, GPU, RAM, operating system or specific computational platform used for the experiments."
